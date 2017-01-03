@@ -11,6 +11,7 @@
 		277383041E191EC000499356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277383021E191EC000499356 /* Main.storyboard */; };
 		277383061E191EC000499356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277383051E191EC000499356 /* Assets.xcassets */; };
 		277383091E191EC000499356 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277383071E191EC000499356 /* LaunchScreen.storyboard */; };
+		2788B8111E1BCD4100373E84 /* LineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788B8101E1BCD4100373E84 /* LineSegment.swift */; };
 		27D884FC1E1A179000774823 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D884FB1E1A179000774823 /* SearchViewController.swift */; };
 		27D885061E1A17B100774823 /* Back-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D884FE1E1A17B100774823 /* Back-50.png */; };
 		27D885071E1A17B100774823 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D884FF1E1A17B100774823 /* Background.png */; };
@@ -47,6 +48,7 @@
 		277383051E191EC000499356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		277383081E191EC000499356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2773830A1E191EC000499356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2788B8101E1BCD4100373E84 /* LineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSegment.swift; sourceTree = "<group>"; };
 		27D884FB1E1A179000774823 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		27D884FE1E1A17B100774823 /* Back-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-50.png"; sourceTree = "<group>"; };
 		27D884FF1E1A17B100774823 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				27D8852E1E1A95C400774823 /* Movie.swift */,
 				27D885301E1A982200774823 /* Actor.swift */,
+				2788B8101E1BCD4100373E84 /* LineSegment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				27D885191E1A5BA600774823 /* MovieCell.swift in Sources */,
 				27D885311E1A982200774823 /* Actor.swift in Sources */,
 				27D8852F1E1A95C400774823 /* Movie.swift in Sources */,
+				2788B8111E1BCD4100373E84 /* LineSegment.swift in Sources */,
 				27D885291E1A8E2B00774823 /* ActorCell.swift in Sources */,
 				27D884FC1E1A179000774823 /* SearchViewController.swift in Sources */,
 				27D885351E1A998F00774823 /* Constant.swift in Sources */,

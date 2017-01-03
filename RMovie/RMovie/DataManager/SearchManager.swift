@@ -11,11 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 class SearchManager {
+    var movies : [Movie]?
+    
     
     static let share = SearchManager()
     
     func searchMovie(searchText : String,completion: @escaping(_ movies: [Movie]) -> Void) {
-        var movies = [Movie]()
+        self.movies = [Movie]()
         let url = (movieSearchUrl + searchText).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         Alamofire.request(url!).responseJSON { (reponse) in
             guard let value = reponse.result.value else {
@@ -27,48 +29,52 @@ class SearchManager {
             }
             for result in results {
                 let movie = Movie()
-                guard let id = result["id"].int else {
-                    return
+                if result["media_type"].string == "person" {
+                    print("person", result["media_type"].string)
+                } else {
+                    guard let id = result["id"].int else {
+                        return
+                    }
+                    guard let name = result["original_title"].string else {
+                        return
+                    }
+                    print("name", name)
+                    guard let poster = result["poster_path"].string else {
+                        return
+                    }
+                    print("poster",poster)
+                    guard let backdrop = result["backdrop_path"].string else {
+                        return
+                    }
+                    guard let popularity = result["popularity"].float else {
+                        return
+                    }
+                    guard let overview = result["overview"].string else {
+                        return
+                    }
+                    guard let release_date = result["release_date"].string else {
+                        return
+                    }
+                    guard let score = result["vote_average"].float else {
+                        return
+                    }
+                    print("score", score)
+                    let range = release_date.startIndex..<release_date.index(release_date.startIndex, offsetBy: 5)
+                    let year = release_date[range]
+                    movie.id = id
+                    movie.name = name
+                    movie.poster = poster
+                    movie.backdrop = backdrop
+                    movie.popularity = popularity
+                    movie.overview = overview
+                    movie.year = year
+                    movie.score = score
+                    self.movies?.append(movie)
                 }
-                guard let name = result["original_title"].string else {
-                    return
-                }
-                print("name", name)
-                guard let poster = result["poster_path"].string else {
-                    return
-                }
-                print("poster",poster)
-                guard let backdrop = result["backdrop_path"].string else {
-                    return
-                }
-                guard let popularity = result["popularity"].float else {
-                    return
-                }
-                guard let overview = result["overview"].string else {
-                    return
-                }
-                guard let release_date = result["release_date"].string else {
-                    return
-                }
-                guard let score = result["vote_average"].float else {
-                    return
-                }
-                print("score", score)
-                let range = release_date.startIndex..<release_date.index(release_date.startIndex, offsetBy: 5)
-                let year = release_date[range]
-                movie.id = id
-                movie.name = name
-                movie.poster = poster
-                movie.backdrop = backdrop
-                movie.popularity = popularity
-                movie.overview = overview
-                movie.year = year
-                movie.score = score
-                movies.append(movie)
             }
-            completion(movies)
+            completion(self.movies!)
         }
-       
+        
     }
 }
 

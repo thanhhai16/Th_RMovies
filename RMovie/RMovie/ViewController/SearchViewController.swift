@@ -11,7 +11,7 @@ import BetterSegmentedControl
 
 class SearchViewController: UIViewController,UITextFieldDelegate {
 
-    @IBOutlet weak var lineSegment: UIView!
+    @IBOutlet weak var lineSegment: LineSegment!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var segmentControl: BetterSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
@@ -28,7 +28,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         self.fetchMovies(searchText: textField.text!)
-        self.animationLine()
+        self.lineSegment.animationLine(moveBack: false)
         return true
     }
     
@@ -50,14 +50,6 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     func segmentControll() {
         self.segmentControl.titles = ["Movies", "Actor"]
     }
-    
-    func animationLine () {
-        let x = self.lineSegment.frame.origin.x
-        UIView.animate(withDuration: 1, animations: {
-            self.lineSegment.frame.origin.x = x + self.lineSegment.frame.width * 2
-        })
-    }
-    
     
     func setupActorCollection() {
         self.actorCollectionView = Bundle.main.loadNibNamed("ActorCollection", owner: nil, options: nil)?.first as? ActorCollection
