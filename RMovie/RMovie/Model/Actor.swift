@@ -9,7 +9,9 @@
 import Foundation
 
 class Actor {
-    var id : String!
+    var id : Int!
     var name : String!
     var poster : String!
+    var popularity: Float!
+    var moviesID : [Int]!
 }

@@ -12,13 +12,9 @@ class LineSegment: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func animationLine(moveBack : Bool) {
-        let currentX = self.frame.origin.x
+    func animationLine(button : UIButton) {
         UIView.animate(withDuration: 0.5) {
-            if moveBack {
-                self.frame.origin.x = currentX - self.frame.width * 2
-            }
-            self.frame.origin.x = currentX + self.frame.width * 2
+            self.center.x = button.center.x
         }
     }
 }
