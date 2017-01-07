@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EZYGradientView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RMovie.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>030AF6DFBF9ECFC35121C758239BD774</key>
+		<key>0072C878C676A855220674463E4E6158</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14186B919B299CB27D819873751F6B90</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DC6D99D2A8270B321E0667F5008CDF4</key>
+		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60E97E6FEFC428E4CDA4B14B04AC8D45</key>
+		<key>4CF0A5EDC2E683363027835904B9D8BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68EF6CDE2D9345FD385D61B03CAD7BDA</key>
+		<key>66F2939B164BFB9CF6DD7937A89F8A71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79B5D43F6AF1AB8B09007E052B0F6E80</key>
+		<key>7566EA8C84378E1E7951AC98DED7C859</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7EFEDD3B7C2E2353E6DBA787A4928840</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,17 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98CBD2C8169F4D5DA48BEBBC3D687587</key>
+		<key>AAF951BF7BC1D0BA52482ECBA7786421</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8F79791B96E82987FD1FCDA7A350CC0</key>
+		<key>D572CB098D7003EF59F2DECA978E439B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4C902A1326307303DFD3FF4DD1F809E</key>
+		<key>E1DDC15EAB707E67FDB63057996BA9C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -22,13 +22,13 @@ class SearchCell: UICollectionViewCell {
     }
     func setUP () {
         self.circle.isHidden = false
-        self.layer.cornerRadius = 10
         self.poster.clipsToBounds = true
-        self.poster.layer.cornerRadius = self.poster.frame.height * 10/350
-        self.imageContainer.layer.shadowColor = UIColor.black.cgColor
-        self.imageContainer.layer.shadowOffset = CGSize(width: 5, height: 10)
-        self.imageContainer.layer.shadowRadius = 5
-        self.imageContainer.layer.shadowOpacity = 0.5
+        self.imageContainer.layer.shadowColor = UIColor.init(hexString: "8B063B")?.cgColor
+        self.imageContainer.layer.shadowOffset = CGSize(width: 0, height: 10)
+        self.imageContainer.layer.shadowRadius = 8
+        self.imageContainer.layer.shadowOpacity = 0.8
+        self.imageContainer.layer.borderColor = UIColor.white.cgColor
+        self.imageContainer.layer.borderWidth = 4
     }
     
     

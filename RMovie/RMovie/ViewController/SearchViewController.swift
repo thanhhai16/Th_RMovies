@@ -9,6 +9,7 @@
 import UIKit
 import BetterSegmentedControl
 import SwiftHEXColors
+import NVActivityIndicatorView
 
 class SearchViewController: UIViewController,UITextFieldDelegate {
     
@@ -17,6 +18,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var segmentControl: BetterSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var lineSegment: LineSegment!
     var noResultText = UILabel()
@@ -79,6 +81,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
         self.segmentView.isHidden = false
         self.fetchMovies(searchText: textField.text!)
         self.fetchActors(searchText: textField.text!)
+        self.activityIndicator.startAnimating()
         return true
     }
     
@@ -105,6 +108,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
                     self.movieCollectionView?.isHidden = true
                 }
             }
+            self.activityIndicator.stopAnimating()
         }
     }
     func fetchActors(searchText : String) {

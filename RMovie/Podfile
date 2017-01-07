@@ -16,5 +16,7 @@ target 'RMovie' do
 	pod 'SwiftHEXColors'
 	pod "XCDYouTubeKit", "~> 2.5"
 	pod 'SwiftyJSON'
+	pod 'NVActivityIndicatorView'
+	pod 'EZYGradientView', :git => 'https://github.com/Niphery/EZYGradientView'
 
 end

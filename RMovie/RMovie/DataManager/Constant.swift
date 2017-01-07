@@ -15,3 +15,5 @@ let movieMedia = "movie"
 
 let movieDetailNotification = "movieDetail"
 
+let backGround = "Background.png"
+

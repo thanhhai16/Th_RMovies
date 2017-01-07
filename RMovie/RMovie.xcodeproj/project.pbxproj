@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		272C900C1E1F7B6A0029CEB7 /* ImageAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C900B1E1F7B6A0029CEB7 /* ImageAnimation.swift */; };
+		272C900E1E20F0D00029CEB7 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 272C900D1E20F0D00029CEB7 /* gradient.png */; };
 		276FA8A01E1EC65400B4C64C /* CastViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FA89E1E1EC65400B4C64C /* CastViewCell.swift */; };
 		276FA8A11E1EC65400B4C64C /* CastViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276FA89F1E1EC65400B4C64C /* CastViewCell.xib */; };
 		277382FF1E191EC000499356 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277382FE1E191EC000499356 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		272C900B1E1F7B6A0029CEB7 /* ImageAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAnimation.swift; sourceTree = "<group>"; };
+		272C900D1E20F0D00029CEB7 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		276FA89E1E1EC65400B4C64C /* CastViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastViewCell.swift; sourceTree = "<group>"; };
 		276FA89F1E1EC65400B4C64C /* CastViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CastViewCell.xib; sourceTree = "<group>"; };
 		277382FB1E191EC000499356 /* RMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 		27D884FD1E1A17B100774823 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				272C900D1E20F0D00029CEB7 /* gradient.png */,
 				27D8851C1E1A5EA300774823 /* score-Circle.png */,
 				27D885151E1A23EA00774823 /* Search-30-white.png */,
 				27D884FE1E1A17B100774823 /* Back-50.png */,
@@ -320,6 +323,7 @@
 				27D885071E1A17B100774823 /* Background.png in Resources */,
 				27D8851F1E1A627900774823 /* MovieCollection.xib in Resources */,
 				27D8850B1E1A17B100774823 /* Search-30.png in Resources */,
+				272C900E1E20F0D00029CEB7 /* gradient.png in Resources */,
 				277383061E191EC000499356 /* Assets.xcassets in Resources */,
 				27D8850A1E1A17B100774823 /* logoTabBar.png in Resources */,
 				277383041E191EC000499356 /* Main.storyboard in Resources */,

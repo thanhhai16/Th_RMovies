@@ -11,9 +11,11 @@ import BetterSegmentedControl
 import SwiftHEXColors
 import XCDYouTubeKit
 import RAMAnimatedTabBarController
+import NVActivityIndicatorView
 
 class MovieDetailViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var segmentView: UIView!
@@ -38,8 +40,12 @@ class MovieDetailViewController: UIViewController {
         self.setUP()
         self.infoSetup()
         self.gestureImage()
+        self.activityIndicator.startAnimating()
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     func gestureImage() {
             let tapImage = UITapGestureRecognizer(target: self, action: #selector(animateImage))
             self.posterImage.addGestureRecognizer(tapImage)
@@ -73,6 +79,7 @@ class MovieDetailViewController: UIViewController {
             self.infoView.movie = self.movie
             self.infoView.setDecription()
             self.view.addSubview(self.infoView)
+            self.activityIndicator.stopAnimating()
         }
     }
     @IBAction func invokePlayBtn(_ sender: UIButton) {
@@ -95,13 +102,15 @@ class MovieDetailViewController: UIViewController {
         self.animateTabbar = self.tabBarController as! RAMAnimatedTabBarController!
         
         self.posterContainer.layer.shadowColor = UIColor.white.cgColor
-        self.posterContainer.layer.shadowOffset = CGSize(width: 2, height: 2)
+            self.posterContainer.layer.shadowOffset = CGSize(width: 2, height: 2)
         self.posterContainer.layer.shadowRadius = 3
         self.posterContainer.layer.shadowOpacity = 0.5
         let posterUrl = URL(string: (movie?.poster)!)
         self.posterImage.sd_setImage(with: posterUrl)
         self.posterImage.clipsToBounds = true
-        self.posterImage.layer.cornerRadius = 10
+        self.posterImage.layer.borderWidth = 2
+        self.posterImage.layer.borderColor = UIColor.white.cgColor
+
         
         let backdropUrl = URL(string: (movie?.backdrop)!)
         self.backdropImage.sd_setImage(with: backdropUrl)
