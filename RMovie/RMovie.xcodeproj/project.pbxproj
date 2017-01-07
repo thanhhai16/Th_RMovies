@@ -47,6 +47,7 @@
 		27D885331E1A986600774823 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D885321E1A986600774823 /* SearchManager.swift */; };
 		27D885351E1A998F00774823 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D885341E1A998F00774823 /* Constant.swift */; };
 		5F6239C6064290D105B54103 /* Pods_RMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC91BF3472A8366845017B14 /* Pods_RMovie.framework */; };
+		84BDABC81E217C2F0086B1AC /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDABC71E217C2F0086B1AC /* CollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		27D885321E1A986600774823 /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		27D885341E1A998F00774823 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		320B39FC09BA55EF2A0FE36F /* Pods-RMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-RMovie/Pods-RMovie.release.xcconfig"; sourceTree = "<group>"; };
+		84BDABC71E217C2F0086B1AC /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		F40C79AF773912F4A9EFC40C /* Pods-RMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RMovie/Pods-RMovie.debug.xcconfig"; sourceTree = "<group>"; };
 		FC91BF3472A8366845017B14 /* Pods_RMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -211,6 +213,7 @@
 		27D885221E1A8D0200774823 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84BDABC61E217C0F0086B1AC /* Favorite */,
 				277592771E1E219500AFC06E /* MovieDetail */,
 				27D885171E1A5B8C00774823 /* SeachColectionView */,
 				27D8852E1E1A95C400774823 /* Movie.swift */,
@@ -245,6 +248,14 @@
 				FC91BF3472A8366845017B14 /* Pods_RMovie.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84BDABC61E217C0F0086B1AC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				84BDABC71E217C2F0086B1AC /* CollectionCell.swift */,
+			);
+			name = Favorite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +418,7 @@
 				277382FF1E191EC000499356 /* AppDelegate.swift in Sources */,
 				27D885141E1A20E200774823 /* FavoriteViewController.swift in Sources */,
 				27D885211E1A628800774823 /* MovieCollection.swift in Sources */,
+				84BDABC81E217C2F0086B1AC /* CollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
