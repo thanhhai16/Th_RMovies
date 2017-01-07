@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A234DF1E21645200F8691E /* RandomMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A234DE1E21645200F8691E /* RandomMovieViewController.swift */; };
 		272C900C1E1F7B6A0029CEB7 /* ImageAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C900B1E1F7B6A0029CEB7 /* ImageAnimation.swift */; };
 		272C900E1E20F0D00029CEB7 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 272C900D1E20F0D00029CEB7 /* gradient.png */; };
 		276FA8A01E1EC65400B4C64C /* CastViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FA89E1E1EC65400B4C64C /* CastViewCell.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04A234DE1E21645200F8691E /* RandomMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomMovieViewController.swift; sourceTree = "<group>"; };
 		272C900B1E1F7B6A0029CEB7 /* ImageAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAnimation.swift; sourceTree = "<group>"; };
 		272C900D1E20F0D00029CEB7 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		276FA89E1E1EC65400B4C64C /* CastViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				27D885131E1A20E200774823 /* FavoriteViewController.swift */,
 				27D884FB1E1A179000774823 /* SearchViewController.swift */,
 				277592751E1E1B2C00AFC06E /* MovieDetailViewController.swift */,
+				04A234DE1E21645200F8691E /* RandomMovieViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -282,7 +285,7 @@
 				TargetAttributes = {
 					277382FA1E191EC000499356 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 68C8FM8363;
+						DevelopmentTeam = FAZH6E59JU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -406,6 +409,7 @@
 				277592891E1E2C8400AFC06E /* SearchDetail.swift in Sources */,
 				277382FF1E191EC000499356 /* AppDelegate.swift in Sources */,
 				27D885141E1A20E200774823 /* FavoriteViewController.swift in Sources */,
+				04A234DF1E21645200F8691E /* RandomMovieViewController.swift in Sources */,
 				27D885211E1A628800774823 /* MovieCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +534,7 @@
 			baseConfigurationReference = F40C79AF773912F4A9EFC40C /* Pods-RMovie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 68C8FM8363;
+				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RMovie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -545,7 +549,7 @@
 			baseConfigurationReference = 320B39FC09BA55EF2A0FE36F /* Pods-RMovie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 68C8FM8363;
+				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RMovie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
