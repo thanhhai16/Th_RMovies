@@ -19,10 +19,11 @@ class FavoriteViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var lineSegment: LineSegment!
+    @IBOutlet var segmentBtn: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         count = movies.count
         
         collectionView.dataSource = self
@@ -32,17 +33,30 @@ class FavoriteViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewWillAppear(_ animated: Bool) {
         // load 2 mảng movies và actors
     }
-
-    @IBAction func invokeMovieButton(_ sender: AnyObject) {
-        picking=0
-        count = movies.count
-        collectionView.reloadData()
+    
+    @IBAction func segmentBtnControll(_ sender: UIButton) {
+        if sender == segmentBtn[0] {
+            sender.setTitleColor(.white, for: .normal)
+            segmentBtn[1].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
+            self.lineSegment.animationLine(button: sender)
+            
+            picking=0
+            count = movies.count
+            collectionView.reloadData()
+            
+        } else {
+            sender.setTitleColor(.white, for: .normal)
+            segmentBtn[0].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
+            self.lineSegment.animationLine(button: sender)
+            
+            picking=1
+            count = actors.count
+            collectionView.reloadData()
+        }
     }
-    @IBAction func invokeActorButton(_ sender: AnyObject) {
-        picking=1
-        count = actors.count
-        collectionView.reloadData()
-    }
+    
+    
+    //MARK: collection
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return count
@@ -79,5 +93,11 @@ class FavoriteViewController: UIViewController, UICollectionViewDelegate, UIColl
         else {
             cell.actor
         }
+    }
+}
+
+extension FavoriteViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width*2/5, height: collectionView.frame.height*19/50)
     }
 }
