@@ -31,26 +31,51 @@ class MovieDetailViewController: UIViewController {
     var trailerPlayer = XCDYouTubeVideoPlayerViewController()
     var animateTabbar : RAMAnimatedTabBarController!
     var oldPosition : CGRect!
+    var currentView : UIView!
     
     var showImage = false
     
     var infoView : InfoMovieView!
+    var reviewView : MovieReviewView!
+    var similarView : SimilarMovieView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUP()
+        self.Notification()
         self.infoSetup()
+        self.reviewSetup()
+        self.similarSetup()
         self.gestureImage()
         self.activityIndicator.startAnimating()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.Notification()
     }
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     func gestureImage() {
             let tapImage = UITapGestureRecognizer(target: self, action: #selector(animateImage))
             self.posterImage.addGestureRecognizer(tapImage)
-            let imageOff = UITapGestureRecognizer(target: self, action: #selector(imageOffAnimation))
-            self.view.addGestureRecognizer(imageOff)
+//            let imageOff = UITapGestureRecognizer(target: self, action: #selector(imageOffAnimation))
+//            self.posterImage.addGestureRecognizer(imageOff)
+    }
+    
+    func Notification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(movieDetail), name: NSNotification.Name(rawValue: movieDetailFromSimilerNotification), object: nil)
+    }
+
+    
+    func movieDetail(_ notification : Notification) {
+        let movie = notification.userInfo?["movie"] as! Movie
+        let movieDetailViewController = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+        movieDetailViewController.movie = movie
+        NotificationCenter.default.removeObserver(self)
+        self.navigationController?.pushViewController(movieDetailViewController, animated: true)
     }
     
     func imageOffAnimation() {
@@ -66,6 +91,43 @@ class MovieDetailViewController: UIViewController {
         ImageAnimation.share.animateOn(imageView: self.posterImage, view: self.view, imageContainer: self.posterContainer, background : self.background)
         self.showImage = true
         }
+    }
+    func similarSetup() {
+        self.similarView = Bundle.main.loadNibNamed("SimilarMovieView", owner: nil, options: nil)?.first as! SimilarMovieView
+        self.similarView.frame = self.viewContainer.frame
+        var movies = [Movie]()
+        SearchManager.share.searhSimilarMovie(media_type: movie.media_type, id: movie.id) { (results) in
+            for movie in results {
+                movies.append(movie)
+            }
+            self.similarView.movies = movies
+            self.view.addSubview(self.similarView)
+            self.similarView.isHidden = true
+        }
+    
+    }
+    
+    func reviewSetup() {
+        self.reviewView = Bundle.main.loadNibNamed("MovieReviewView", owner: nil, options: nil)?.first as! MovieReviewView
+        self.reviewView.frame = self.viewContainer.frame
+        var reviews = [String]()
+        SearchManager.share.searchReview(media_type: movie.media_type, id: movie.id) { (results) in
+            if results.count == 0 {
+                self.reviewView.reviews = reviews
+                self.reviewView.noReviewLabel.isHidden = false
+                self.view.addSubview(self.reviewView)
+            } else {
+            for review in results {
+                print("review", review)
+                reviews.append(review)
+            }
+                self.reviewView.reviews = reviews
+                self.view.addSubview(self.reviewView)
+                self.reviewView.isHidden = true
+
+            }
+        }
+       
     }
     func infoSetup() {
         var casts = [Actor]()
@@ -97,6 +159,7 @@ class MovieDetailViewController: UIViewController {
         trailerPlayer.dismiss(animated: true, completion: nil)
     }
     func setUP() {
+        
         self.oldPosition = self.posterContainer.frame
         
         self.animateTabbar = self.tabBarController as! RAMAnimatedTabBarController!
@@ -123,16 +186,28 @@ class MovieDetailViewController: UIViewController {
     @IBAction func segmentControll(_ sender: UIButton) {
         switch sender {
         case segmentBtn[0]:
+            self.infoView.isHidden = false
+            self.reviewView.isHidden = true
+            self.similarView.isHidden = true
+            //self.currentView = self.infoView
             sender.setTitleColor(.white, for: .normal)
             self.lineSegment.animationLine(button: sender)
             segmentBtn[1].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
             segmentBtn[2].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
         case segmentBtn[1]:
+            self.reviewView.isHidden = false
+            self.infoView.isHidden = true
+            self.similarView.isHidden = true
+            //self.currentView = self.reviewView
             sender.setTitleColor(.white, for: .normal)
             self.lineSegment.animationLine(button: sender)
             segmentBtn[0].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
             segmentBtn[2].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
         case segmentBtn[2]:
+            self.reviewView.isHidden = true
+            self.infoView.isHidden = true
+            self.similarView.isHidden = false
+            self.view.bringSubview(toFront: self.similarView)
             sender.setTitleColor(.white, for: .normal)
             self.lineSegment.animationLine(button: sender)
             segmentBtn[0].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)

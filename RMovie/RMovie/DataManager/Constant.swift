@@ -14,6 +14,7 @@ let tv = "tv"
 let movieMedia = "movie"
 
 let movieDetailNotification = "movieDetail"
+let movieDetailFromSimilerNotification = "similarDetail"
 
 let backGround = "Background.png"
 
