@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u3o-41-QfP">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u3o-41-QfP">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,7 @@
         <!--Movie Today-->
         <scene sceneID="oC6-IF-1Kr">
             <objects>
-                <navigationController id="fYY-Wq-jhB" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="fYY-Wq-jhB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Movie Today" image="logoTabBar.png" id="6aW-N8-QxP" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <connections>
                             <outlet property="animation" destination="XRt-Qh-u6V" id="Aou-hx-mcY"/>
@@ -35,7 +36,7 @@
         <!--Movie Today-->
         <scene sceneID="nXf-Ta-Fvb">
             <objects>
-                <viewController id="cku-kl-azq" customClass="MovieTodayViewController" customModule="RMovie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cku-kl-azq" customClass="RandomMovieViewController" customModule="RMovie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gFz-t3-kpo"/>
                         <viewControllerLayoutGuide type="bottom" id="xpX-DX-ZI5"/>
@@ -43,10 +44,45 @@
                     <view key="view" contentMode="scaleToFill" id="RD7-aK-4BN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTabBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-2H-CKr">
+                                <rect key="frame" x="54" y="124" width="213" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U4M-2H-CKr" secondAttribute="height" multiplier="2:3" id="Ki9-lo-svO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKT-BB-FET">
+                                <rect key="frame" x="36" y="451" width="248" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe down to random Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mip-61-L3o">
+                                <rect key="frame" x="43" y="88" width="234" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U4M-2H-CKr" firstAttribute="centerY" secondItem="RD7-aK-4BN" secondAttribute="centerY" id="7jG-Xh-yq1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zKT-BB-FET" secondAttribute="trailing" constant="20" id="Flk-mh-meJ"/>
+                            <constraint firstItem="mip-61-L3o" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="Uuk-5o-baN"/>
+                            <constraint firstItem="zKT-BB-FET" firstAttribute="leading" secondItem="RD7-aK-4BN" secondAttribute="leadingMargin" constant="20" id="bO4-e3-QgS"/>
+                            <constraint firstItem="zKT-BB-FET" firstAttribute="top" secondItem="U4M-2H-CKr" secondAttribute="bottom" constant="7" id="mNz-lr-sK4"/>
+                            <constraint firstItem="U4M-2H-CKr" firstAttribute="width" secondItem="RD7-aK-4BN" secondAttribute="width" multiplier="2:3" id="mRy-v6-NRr"/>
+                            <constraint firstItem="U4M-2H-CKr" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="t0b-63-3Ho"/>
+                            <constraint firstItem="zKT-BB-FET" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="uGW-z0-GWQ"/>
+                            <constraint firstItem="U4M-2H-CKr" firstAttribute="top" secondItem="mip-61-L3o" secondAttribute="bottom" constant="15" id="v1X-Og-R0u"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Movie Today" image="logoTabBar.png" id="mkR-Eg-g05" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <navigationItem key="navigationItem" id="3nC-0q-7i5"/>
+                    <connections>
+                        <outlet property="lblNameMovies" destination="zKT-BB-FET" id="Uw8-JJ-AeS"/>
+                        <outlet property="posterImage" destination="U4M-2H-CKr" id="lu4-us-KGu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff3-Nf-CHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
