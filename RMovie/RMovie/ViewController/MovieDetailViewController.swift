@@ -159,13 +159,15 @@ class MovieDetailViewController: UIViewController {
     }
     func setUP() {
         self.similarView = Bundle.main.loadNibNamed("SimilarMovieView", owner: nil, options: nil)?.first as! SimilarMovieView
-        self.similarView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: self.viewContainer.frame.origin.y - 35, width: self.view.frame.width - 32, height: self.viewContainer.frame.height - 60)
+        let height = self.view.frame.height * 220/568
+        let y = self.view.frame.height - height * 21/20 - 50
+        self.similarView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: y, width: self.view.frame.width - 32, height: height)
         
         self.reviewView = Bundle.main.loadNibNamed("MovieReviewView", owner: nil, options: nil)?.first as! MovieReviewView
-        self.reviewView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: self.viewContainer.frame.origin.y - 35, width: self.view.frame.width - 32, height: self.viewContainer.frame.height - 60)
+        self.reviewView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: y, width: self.view.frame.width - 32, height: height)
         
         self.infoView =  Bundle.main.loadNibNamed("InfoMovieView", owner: nil, options: nil)?.first as! InfoMovieView
-        self.infoView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: self.viewContainer.frame.origin.y - 35, width: self.view.frame.width - 32, height: self.viewContainer.frame.height - 60)
+        self.infoView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: y, width: self.view.frame.width - 32, height: height)
 
         self.reviewView.isHidden = true
         self.similarView.isHidden = true

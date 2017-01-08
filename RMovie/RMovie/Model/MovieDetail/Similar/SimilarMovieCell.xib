@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAt-NO-1QJ">
-                        <rect key="frame" x="12" y="8" width="194" height="291"/>
+                        <rect key="frame" x="17.5" y="16" width="183" height="275"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-7f-nq7">
-                                <rect key="frame" x="0.0" y="0.0" width="194" height="291"/>
+                                <rect key="frame" x="0.0" y="0.0" width="183" height="275"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +38,7 @@
             </view>
             <constraints>
                 <constraint firstItem="cAt-NO-1QJ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="GyR-aY-3wa"/>
-                <constraint firstItem="cAt-NO-1QJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="TnB-9U-BPn"/>
+                <constraint firstItem="cAt-NO-1QJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="TnB-9U-BPn"/>
                 <constraint firstItem="cAt-NO-1QJ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="rqb-VQ-v0n"/>
             </constraints>
             <size key="customSize" width="218" height="307"/>
