@@ -82,6 +82,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
         self.fetchMovies(searchText: textField.text!)
         self.fetchActors(searchText: textField.text!)
         self.activityIndicator.startAnimating()
+        self.noResultText.isHidden = true
         return true
     }
     

@@ -27,11 +27,13 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var backdropImage: UIImageView!
     
+    @IBOutlet weak var noResult: UILabel!
     var movie : Movie!
     var trailerPlayer = XCDYouTubeVideoPlayerViewController()
     var animateTabbar : RAMAnimatedTabBarController!
     var oldPosition : CGRect!
     var currentView : UIView!
+    var reviewNull = false
     
     var showImage = false
     
@@ -54,6 +56,7 @@ class MovieDetailViewController: UIViewController {
         self.Notification()
     }
     
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -61,8 +64,6 @@ class MovieDetailViewController: UIViewController {
     func gestureImage() {
             let tapImage = UITapGestureRecognizer(target: self, action: #selector(animateImage))
             self.posterImage.addGestureRecognizer(tapImage)
-//            let imageOff = UITapGestureRecognizer(target: self, action: #selector(imageOffAnimation))
-//            self.posterImage.addGestureRecognizer(imageOff)
     }
     
     func Notification() {
@@ -83,6 +84,7 @@ class MovieDetailViewController: UIViewController {
         self.animateTabbar.animationTabBarHidden(false)
             ImageAnimation.share.animateOff(imageView: self.posterImage, imageContainer: self.posterContainer, oldPosition: self.oldPosition, view: self.view,background : self.background)
         self.showImage = false
+            self.view.gestureRecognizers?.removeAll()
         }
     }
     func animateImage() {
@@ -90,11 +92,12 @@ class MovieDetailViewController: UIViewController {
         self.animateTabbar.animationTabBarHidden(true)
         ImageAnimation.share.animateOn(imageView: self.posterImage, view: self.view, imageContainer: self.posterContainer, background : self.background)
         self.showImage = true
+            let imageOff = UITapGestureRecognizer(target: self, action: #selector(imageOffAnimation))
+            self.view.addGestureRecognizer(imageOff)
+
         }
     }
     func similarSetup() {
-        self.similarView = Bundle.main.loadNibNamed("SimilarMovieView", owner: nil, options: nil)?.first as! SimilarMovieView
-        self.similarView.frame = self.viewContainer.frame
         var movies = [Movie]()
         SearchManager.share.searhSimilarMovie(media_type: movie.media_type, id: movie.id) { (results) in
             for movie in results {
@@ -102,19 +105,16 @@ class MovieDetailViewController: UIViewController {
             }
             self.similarView.movies = movies
             self.view.addSubview(self.similarView)
-            self.similarView.isHidden = true
         }
     
     }
     
     func reviewSetup() {
-        self.reviewView = Bundle.main.loadNibNamed("MovieReviewView", owner: nil, options: nil)?.first as! MovieReviewView
-        self.reviewView.frame = self.viewContainer.frame
-        var reviews = [String]()
+               var reviews = [String]()
         SearchManager.share.searchReview(media_type: movie.media_type, id: movie.id) { (results) in
             if results.count == 0 {
+                self.reviewNull = true
                 self.reviewView.reviews = reviews
-                self.reviewView.noReviewLabel.isHidden = false
                 self.view.addSubview(self.reviewView)
             } else {
             for review in results {
@@ -123,7 +123,8 @@ class MovieDetailViewController: UIViewController {
             }
                 self.reviewView.reviews = reviews
                 self.view.addSubview(self.reviewView)
-                self.reviewView.isHidden = true
+                self.noResult.isHidden = true
+                self.reviewNull = false
 
             }
         }
@@ -131,9 +132,7 @@ class MovieDetailViewController: UIViewController {
     }
     func infoSetup() {
         var casts = [Actor]()
-         self.infoView =  Bundle.main.loadNibNamed("InfoMovieView", owner: nil, options: nil)?.first as! InfoMovieView
-        self.infoView.frame = self.viewContainer.frame
-        SearchManager.share.searchMovieCast(mediaType: movie.media_type, id: movie.id) { (actors) in
+                SearchManager.share.searchMovieCast(mediaType: movie.media_type, id: movie.id) { (actors) in
             for actor in actors {
                casts.append(actor)
             }
@@ -159,6 +158,19 @@ class MovieDetailViewController: UIViewController {
         trailerPlayer.dismiss(animated: true, completion: nil)
     }
     func setUP() {
+        self.similarView = Bundle.main.loadNibNamed("SimilarMovieView", owner: nil, options: nil)?.first as! SimilarMovieView
+        self.similarView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: self.viewContainer.frame.origin.y - 35, width: self.view.frame.width - 32, height: self.viewContainer.frame.height - 60)
+        
+        self.reviewView = Bundle.main.loadNibNamed("MovieReviewView", owner: nil, options: nil)?.first as! MovieReviewView
+        self.reviewView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: self.viewContainer.frame.origin.y - 35, width: self.view.frame.width - 32, height: self.viewContainer.frame.height - 60)
+        
+        self.infoView =  Bundle.main.loadNibNamed("InfoMovieView", owner: nil, options: nil)?.first as! InfoMovieView
+        self.infoView.frame = CGRect(x: self.viewContainer.frame.origin.x, y: self.viewContainer.frame.origin.y - 35, width: self.view.frame.width - 32, height: self.viewContainer.frame.height - 60)
+
+        self.reviewView.isHidden = true
+        self.similarView.isHidden = true
+        
+        self.noResult.isHidden = true
         
         self.oldPosition = self.posterContainer.frame
         
@@ -186,6 +198,7 @@ class MovieDetailViewController: UIViewController {
     @IBAction func segmentControll(_ sender: UIButton) {
         switch sender {
         case segmentBtn[0]:
+            self.noResult.isHidden = true
             self.infoView.isHidden = false
             self.reviewView.isHidden = true
             self.similarView.isHidden = true
@@ -195,6 +208,9 @@ class MovieDetailViewController: UIViewController {
             segmentBtn[1].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
             segmentBtn[2].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
         case segmentBtn[1]:
+            if reviewNull {
+                self.noResult.isHidden = false
+            }
             self.reviewView.isHidden = false
             self.infoView.isHidden = true
             self.similarView.isHidden = true
@@ -204,10 +220,10 @@ class MovieDetailViewController: UIViewController {
             segmentBtn[0].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
             segmentBtn[2].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)
         case segmentBtn[2]:
+            self.noResult.isHidden = true
             self.reviewView.isHidden = true
             self.infoView.isHidden = true
             self.similarView.isHidden = false
-            self.view.bringSubview(toFront: self.similarView)
             sender.setTitleColor(.white, for: .normal)
             self.lineSegment.animationLine(button: sender)
             segmentBtn[0].setTitleColor(UIColor.init(hexString: "929292"), for: .normal)

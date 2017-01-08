@@ -10,11 +10,9 @@ import UIKit
 
 class MovieReviewView: UIView, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var noReviewLabel: UILabel!
     var reviews : [String]!
     
     @IBOutlet weak var reviewTable: UITableView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,7 +23,6 @@ class MovieReviewView: UIView, UITableViewDelegate, UITableViewDataSource {
         self.reviewTable.dataSource = self
         self.reviewTable.delegate = self
         self.reviewTable.backgroundColor = .none
-        self.noReviewLabel.isHidden = true
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
