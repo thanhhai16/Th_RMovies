@@ -13,5 +13,5 @@ class Actor {
     var name : String!
     var poster : String!
     var popularity: Float!
-    var moviesID : [Int]!
+    var movies : [Movie]!
 }

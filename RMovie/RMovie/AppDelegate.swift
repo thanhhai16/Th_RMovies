@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //        SearchManager.share.searchActorDetail(id: 48) { (a, b, c, d, e) in
+        //            print("got it")
+        //        }
+        
+        
+                print("start search::::::::::::::::::")
+                SearchManager.share.searchActorDetailMovie(id: 48) { (movies) in
+                    print("got all movie id")
+                    for movie in movies {
+                        print("__________ID: \(movie.id) --- poster : \(movie.poster)~~~~~~~~~~~")
+                    }
+                }
         return true
     }
 
