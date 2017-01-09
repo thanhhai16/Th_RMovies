@@ -21,6 +21,8 @@
 		272F67481E219810006D7A77 /* SimilarMovieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 272F67471E219810006D7A77 /* SimilarMovieView.xib */; };
 		272F674F1E219905006D7A77 /* SimilarMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272F674D1E219905006D7A77 /* SimilarMovieCell.swift */; };
 		272F67501E219905006D7A77 /* SimilarMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 272F674E1E219905006D7A77 /* SimilarMovieCell.xib */; };
+		2764ECD81E24157000BFB4C1 /* logo Rmovie tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764ECD71E24157000BFB4C1 /* logo Rmovie tabbar.png */; };
+		2764ECDA1E24161700BFB4C1 /* logo Rmovie.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764ECD91E24161700BFB4C1 /* logo Rmovie.png */; };
 		276FA8A01E1EC65400B4C64C /* CastViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FA89E1E1EC65400B4C64C /* CastViewCell.swift */; };
 		276FA8A11E1EC65400B4C64C /* CastViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276FA89F1E1EC65400B4C64C /* CastViewCell.xib */; };
 		277382FF1E191EC000499356 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277382FE1E191EC000499356 /* AppDelegate.swift */; };
@@ -38,8 +40,6 @@
 		27D885061E1A17B100774823 /* Back-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D884FE1E1A17B100774823 /* Back-50.png */; };
 		27D885071E1A17B100774823 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D884FF1E1A17B100774823 /* Background.png */; };
 		27D885081E1A17B100774823 /* Circled Play-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D885001E1A17B100774823 /* Circled Play-50.png */; };
-		27D885091E1A17B100774823 /* LogoLoading.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D885011E1A17B100774823 /* LogoLoading.png */; };
-		27D8850A1E1A17B100774823 /* logoTabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D885021E1A17B100774823 /* logoTabBar.png */; };
 		27D8850B1E1A17B100774823 /* Search-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D885031E1A17B100774823 /* Search-30.png */; };
 		27D8850C1E1A17B100774823 /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D885041E1A17B100774823 /* Search.png */; };
 		27D8850D1E1A17B100774823 /* Star-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D885051E1A17B100774823 /* Star-30.png */; };
@@ -76,6 +76,8 @@
 		272F67471E219810006D7A77 /* SimilarMovieView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimilarMovieView.xib; sourceTree = "<group>"; };
 		272F674D1E219905006D7A77 /* SimilarMovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimilarMovieCell.swift; sourceTree = "<group>"; };
 		272F674E1E219905006D7A77 /* SimilarMovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimilarMovieCell.xib; sourceTree = "<group>"; };
+		2764ECD71E24157000BFB4C1 /* logo Rmovie tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo Rmovie tabbar.png"; sourceTree = "<group>"; };
+		2764ECD91E24161700BFB4C1 /* logo Rmovie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo Rmovie.png"; sourceTree = "<group>"; };
 		276FA89E1E1EC65400B4C64C /* CastViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastViewCell.swift; sourceTree = "<group>"; };
 		276FA89F1E1EC65400B4C64C /* CastViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CastViewCell.xib; sourceTree = "<group>"; };
 		277382FB1E191EC000499356 /* RMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,8 +97,6 @@
 		27D884FE1E1A17B100774823 /* Back-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-50.png"; sourceTree = "<group>"; };
 		27D884FF1E1A17B100774823 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		27D885001E1A17B100774823 /* Circled Play-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circled Play-50.png"; sourceTree = "<group>"; };
-		27D885011E1A17B100774823 /* LogoLoading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoLoading.png; sourceTree = "<group>"; };
-		27D885021E1A17B100774823 /* logoTabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoTabBar.png; sourceTree = "<group>"; };
 		27D885031E1A17B100774823 /* Search-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-30.png"; sourceTree = "<group>"; };
 		27D885041E1A17B100774823 /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
 		27D885051E1A17B100774823 /* Star-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-30.png"; sourceTree = "<group>"; };
@@ -236,14 +236,14 @@
 		27D884FD1E1A17B100774823 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2764ECD91E24161700BFB4C1 /* logo Rmovie.png */,
+				2764ECD71E24157000BFB4C1 /* logo Rmovie tabbar.png */,
 				272C900D1E20F0D00029CEB7 /* gradient.png */,
 				27D8851C1E1A5EA300774823 /* score-Circle.png */,
 				27D885151E1A23EA00774823 /* Search-30-white.png */,
 				27D884FE1E1A17B100774823 /* Back-50.png */,
 				27D884FF1E1A17B100774823 /* Background.png */,
 				27D885001E1A17B100774823 /* Circled Play-50.png */,
-				27D885011E1A17B100774823 /* LogoLoading.png */,
-				27D885021E1A17B100774823 /* logoTabBar.png */,
 				27D885031E1A17B100774823 /* Search-30.png */,
 				27D885041E1A17B100774823 /* Search.png */,
 				27D885051E1A17B100774823 /* Star-30.png */,
@@ -378,7 +378,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27D885091E1A17B100774823 /* LogoLoading.png in Resources */,
 				27D8850D1E1A17B100774823 /* Star-30.png in Resources */,
 				27D885081E1A17B100774823 /* Circled Play-50.png in Resources */,
 				277383091E191EC000499356 /* LaunchScreen.storyboard in Resources */,
@@ -388,6 +387,7 @@
 				27D8852D1E1A8F2500774823 /* ActorCollection.xib in Resources */,
 				27D885061E1A17B100774823 /* Back-50.png in Resources */,
 				2775927B1E1E21E000AFC06E /* InfoMovieView.xib in Resources */,
+				2764ECD81E24157000BFB4C1 /* logo Rmovie tabbar.png in Resources */,
 				272F67481E219810006D7A77 /* SimilarMovieView.xib in Resources */,
 				27D885161E1A23EA00774823 /* Search-30-white.png in Resources */,
 				27D885071E1A17B100774823 /* Background.png in Resources */,
@@ -395,11 +395,11 @@
 				27D8850B1E1A17B100774823 /* Search-30.png in Resources */,
 				272C900E1E20F0D00029CEB7 /* gradient.png in Resources */,
 				277383061E191EC000499356 /* Assets.xcassets in Resources */,
-				27D8850A1E1A17B100774823 /* logoTabBar.png in Resources */,
 				277383041E191EC000499356 /* Main.storyboard in Resources */,
 				272F673D1E2172D3006D7A77 /* MovieReviewView.xib in Resources */,
 				2775927F1E1E238100AFC06E /* GenreCollectionViewCell.xib in Resources */,
 				27D8851B1E1A5BBF00774823 /* SearchCell.xib in Resources */,
+				2764ECDA1E24161700BFB4C1 /* logo Rmovie.png in Resources */,
 				272F673F1E2176B4006D7A77 /* MovieReviewCell.xib in Resources */,
 				276FA8A11E1EC65400B4C64C /* CastViewCell.xib in Resources */,
 			);
@@ -610,7 +610,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F40C79AF773912F4A9EFC40C /* Pods-RMovie.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 68C8FM8363;
 				INFOPLIST_FILE = RMovie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -627,7 +627,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 320B39FC09BA55EF2A0FE36F /* Pods-RMovie.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 68C8FM8363;
 				INFOPLIST_FILE = RMovie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
