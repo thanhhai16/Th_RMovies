@@ -15,19 +15,36 @@ class InfoMovieView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     @IBOutlet weak var desciptionText: UITextView!
     
     var movie : Movie!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setup()
     }
     func setup() {
+        
+        // Set Delegate adn DataSource
+        
         self.genreColletion.delegate = self
         self.genreColletion.dataSource = self
         self.castCollection.delegate = self
         self.castCollection.dataSource = self
+        
+        // Register Cell
+        
         let castNib = UINib(nibName: "CastViewCell", bundle: nil)
         self.castCollection.register(castNib, forCellWithReuseIdentifier: "CastViewCell")
         let genreNib = UINib(nibName: "GenreCollectionViewCell", bundle: nil)
         self.genreColletion.register(genreNib, forCellWithReuseIdentifier: "GenreCollectionViewCell")
+        
+        // Configure Layout
+        
+        let layout = self.genreColletion.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.estimatedItemSize = CGSize(width: self.genreColletion.frame.width/5, height: self.genreColletion.frame.height/2.5)
+        let castLayout = self.castCollection.collectionViewLayout as! UICollectionViewFlowLayout
+        castLayout.itemSize = CGSize(width: self.castCollection.frame.height/2 , height: self.castCollection.frame.height/2 )
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        // UI Setup
         self.genreColletion.backgroundColor = .none
         self.castCollection.backgroundColor = .none
     }
@@ -35,6 +52,8 @@ class InfoMovieView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func setDecription() {
         self.desciptionText.text = self.movie.overview
     }
+    
+    // DataSource Method
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -60,23 +79,4 @@ class InfoMovieView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             return cell
         }
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == castCollection {
-            return CGSize(width: self.castCollection.frame.height , height: self.castCollection.frame.height )
-        }
-        return CGSize(width: self.genreColletion.frame.width/3.5, height: self.genreColletion.frame.height/2.5)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == self.castCollection {
-            return collectionView.frame.height * 1/3
-        } else {
-            return 10
-        }
-    }
-    
-
 }
