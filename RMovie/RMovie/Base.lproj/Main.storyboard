@@ -15,7 +15,7 @@
         <scene sceneID="oC6-IF-1Kr">
             <objects>
                 <navigationController navigationBarHidden="YES" id="fYY-Wq-jhB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movie Today" image="logoTabBar.png" id="6aW-N8-QxP" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Movie Today" image="logo Rmovie tabbar.png" id="6aW-N8-QxP" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <connections>
                             <outlet property="animation" destination="XRt-Qh-u6V" id="Aou-hx-mcY"/>
                         </connections>
@@ -45,7 +45,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTabBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-2H-CKr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo Rmovie.png" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-2H-CKr">
                                 <rect key="frame" x="53.5" y="124" width="213" height="320.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="U4M-2H-CKr" secondAttribute="height" multiplier="2:3" id="Ki9-lo-svO"/>
@@ -330,51 +330,51 @@
                                     <constraint firstAttribute="trailing" secondItem="uMI-ay-4yJ" secondAttribute="trailing" id="m5M-jA-FDx"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGm-Vg-Tdl">
-                                <rect key="frame" x="113" y="182" width="199" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vGm-Vg-Tdl">
+                                <rect key="frame" x="112" y="182" width="200" height="38"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-rj-6Rf">
-                                <rect key="frame" x="119" y="242" width="27" height="18"/>
+                                <rect key="frame" x="118" y="242" width="27" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-EK-hUi">
-                                <rect key="frame" x="250" y="242" width="60" height="18"/>
+                                <rect key="frame" x="249" y="242" width="60" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bIi-33-ABM">
-                                <rect key="frame" x="113" y="222" width="39" height="18"/>
+                                <rect key="frame" x="112" y="222" width="39" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.54509803921568623" green="0.023529411764705882" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="CHm-8b-iF9">
-                                <rect key="frame" x="179" y="222" width="39" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="CHm-8b-iF9">
+                                <rect key="frame" x="178" y="222" width="39" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.54509803921568623" green="0.023529411764705882" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-45-iCX">
-                                <rect key="frame" x="261" y="222" width="39" height="18"/>
+                                <rect key="frame" x="260" y="222" width="39" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.54509803921568623" green="0.023529411764705882" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Ratings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mi-me-iMC">
-                                <rect key="frame" x="175" y="242" width="47" height="18"/>
+                                <rect key="frame" x="174" y="242" width="47" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -469,10 +469,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kis-80-AdV">
-                                <rect key="frame" x="16" y="140" width="81" height="120"/>
+                                <rect key="frame" x="16" y="140" width="80" height="120"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-8C-oba">
-                                        <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="120"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -487,6 +487,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vGm-Vg-Tdl" firstAttribute="leading" secondItem="Kis-80-AdV" secondAttribute="trailing" constant="16" id="3bo-4r-yhE"/>
+                            <constraint firstItem="bIi-33-ABM" firstAttribute="top" secondItem="vGm-Vg-Tdl" secondAttribute="bottom" constant="2" id="3wc-B4-g1H"/>
                             <constraint firstItem="9mi-me-iMC" firstAttribute="leading" secondItem="kn7-rj-6Rf" secondAttribute="trailing" constant="29" id="4G3-Xi-kvo"/>
                             <constraint firstAttribute="trailing" secondItem="YEn-89-mwV" secondAttribute="trailing" constant="16" id="6Sq-aY-gi1"/>
                             <constraint firstItem="bIi-33-ABM" firstAttribute="centerX" secondItem="kn7-rj-6Rf" secondAttribute="centerX" id="CDJ-kt-9HE"/>
@@ -496,6 +497,7 @@
                             <constraint firstItem="Kis-80-AdV" firstAttribute="bottom" secondItem="kn7-rj-6Rf" secondAttribute="bottom" id="HRb-dr-4jA"/>
                             <constraint firstItem="3Yb-EK-hUi" firstAttribute="bottom" secondItem="NU0-8C-oba" secondAttribute="bottom" id="HVU-p1-WqH"/>
                             <constraint firstAttribute="trailing" secondItem="trt-bW-hJi" secondAttribute="trailing" id="Hp8-24-gRp"/>
+                            <constraint firstItem="CHm-8b-iF9" firstAttribute="top" secondItem="vGm-Vg-Tdl" secondAttribute="bottom" constant="2" id="JUt-d4-Fj0"/>
                             <constraint firstItem="cmQ-45-iCX" firstAttribute="centerX" secondItem="3Yb-EK-hUi" secondAttribute="centerX" id="KYP-Gm-Uxg"/>
                             <constraint firstItem="3H2-u8-D4T" firstAttribute="top" secondItem="trt-bW-hJi" secondAttribute="bottom" id="LSH-6G-4G1"/>
                             <constraint firstItem="Kis-80-AdV" firstAttribute="centerY" secondItem="uMI-ay-4yJ" secondAttribute="centerY" constant="110" id="MHj-SH-9W7"/>
@@ -514,6 +516,7 @@
                             <constraint firstAttribute="trailing" secondItem="vGm-Vg-Tdl" secondAttribute="trailing" constant="8" id="kEe-5E-Dli"/>
                             <constraint firstItem="CHm-8b-iF9" firstAttribute="centerX" secondItem="9mi-me-iMC" secondAttribute="centerX" id="mX4-Kb-MsW"/>
                             <constraint firstItem="kn7-rj-6Rf" firstAttribute="top" secondItem="bIi-33-ABM" secondAttribute="bottom" constant="2" id="oHS-h6-sxf"/>
+                            <constraint firstItem="cmQ-45-iCX" firstAttribute="top" secondItem="vGm-Vg-Tdl" secondAttribute="bottom" constant="2" id="oqt-hL-qSo"/>
                             <constraint firstItem="3Yb-EK-hUi" firstAttribute="leading" secondItem="9mi-me-iMC" secondAttribute="trailing" constant="28" id="pCE-A8-Elj"/>
                             <constraint firstItem="trt-bW-hJi" firstAttribute="leading" secondItem="Eth-PY-beK" secondAttribute="leading" id="u1Q-5D-kLE"/>
                             <constraint firstItem="y1r-A9-OaM" firstAttribute="top" secondItem="9mi-me-iMC" secondAttribute="bottom" constant="5" id="u36-Dl-snp"/>
@@ -594,6 +597,8 @@
         <image name="Search-30.png" width="30" height="30"/>
         <image name="Star-30.png" width="30" height="30"/>
         <image name="gradient.png" width="606" height="340"/>
+        <image name="logo Rmovie tabbar.png" width="29" height="29"/>
+        <image name="logo Rmovie.png" width="1000" height="1000"/>
         <image name="logoTabBar.png" width="30" height="30"/>
     </resources>
 </document>
