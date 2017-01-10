@@ -7,35 +7,66 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class RandomMovieViewController: UIViewController {
 
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var checkInternet = InternetStatus.share.checkInternet()
     
     @IBOutlet weak var lblNameMovies: UILabel!
     
     @IBOutlet weak var posterImage: UIImageView!
     var movie = Movie()
+    var imageSelected = true
     
     let recognizer = UITapGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        //setting for label Name Movies
         lblNameMovies.isHidden = true
         lblNameMovies.sizeToFit()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        checkInternet = InternetStatus.share.checkInternet()
+        if (!checkInternet) {
+            InternetStatus.share.showAlert()
+        }
         
+        
+        
+        //setting for swipe down
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.randomTopMovies))
         swipeDown.direction = UISwipeGestureRecognizerDirection.down
         self.view.addGestureRecognizer(swipeDown)
         
-        self.posterImage.isUserInteractionEnabled = true
-        recognizer.addTarget(self, action: "handleTap")
+        // tapping in poster Image -> go to info of this movies
+        if (!imageSelected){ // if it's not a default image (first image when u go to app see) u can detect it
+            self.posterImage.isUserInteractionEnabled = true
+            recognizer.addTarget(self, action: #selector(RandomMovieViewController.handleTap))
+            self.posterImage.addGestureRecognizer(recognizer)
+        } else {
+            imageSelected = false
+        }
+        
+        /* slove situation that some movies in topMovies Array are repeat .
+         Why loop ? Because api that i use to down info movies just provie only 20 movies per page.
+         So i must use 5 for loop to get 100 top movies. Moreover, 1 loop include completion(movies)
+         (movies is array
+         
+         */
+        progressRepeaterMovies()
 
-        self.posterImage.addGestureRecognizer(recognizer)
-        progressLoopMovie()
+        
     }
 
     func handleTap() {
+        if (!checkInternet) {
+            InternetStatus.share.showAlert()
+            return
+        }
+        
         let movieDetailViewController = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
         movieDetailViewController.movie = movie
         
@@ -44,13 +75,18 @@ class RandomMovieViewController: UIViewController {
     }
     
     func randomTopMovies(){
+        if (!checkInternet) {
+            InternetStatus.share.showAlert()
+            return
+        }
+        
         let rad = Int(arc4random_uniform(UInt32(appDelegate.countTopFilmRest)))
         appDelegate.countTopFilmRest -= 1
-        print(appDelegate.countTopFilmRest)
+        //print(appDelegate.countTopFilmRest)
         movie = appDelegate.topMovies[rad]
  
         let url = URL(string: movie.poster)
-        print(url)
+        //print(url)
         self.posterImage.sd_setImage(with: url)
         lblNameMovies.isHidden = false
         lblNameMovies.text = movie.name
@@ -58,7 +94,7 @@ class RandomMovieViewController: UIViewController {
         print(appDelegate.topMovies.count)
     }
 
-    func progressLoopMovie()  {
+    func progressRepeaterMovies()  {
         var checkFilmSelected = Array(repeating: false, count: 100000000)
         var count = 0
         for movie in appDelegate.topMovies {

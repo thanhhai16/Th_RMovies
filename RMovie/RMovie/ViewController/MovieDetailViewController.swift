@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BetterSegmentedControl
 import SwiftHEXColors
 import XCDYouTubeKit
 import RAMAnimatedTabBarController

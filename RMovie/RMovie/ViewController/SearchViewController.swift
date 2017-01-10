@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BetterSegmentedControl
 import SwiftHEXColors
 import NVActivityIndicatorView
 
@@ -15,7 +14,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var segmentBtn: [UIButton]!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var segmentControl: BetterSegmentedControl!
+    //@IBOutlet weak var segmentControl: BetterSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!

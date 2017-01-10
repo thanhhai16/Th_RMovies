@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7566EA8C84378E1E7951AC98DED7C859"
+               BlueprintIdentifier = "9CEB2E4AF4D66083F413452213D6A603"
                BuildableName = "Pods_RMovie.framework"
                BlueprintName = "Pods-RMovie"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7566EA8C84378E1E7951AC98DED7C859"
+            BlueprintIdentifier = "9CEB2E4AF4D66083F413452213D6A603"
             BuildableName = "Pods_RMovie.framework"
             BlueprintName = "Pods-RMovie"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7566EA8C84378E1E7951AC98DED7C859"
-            BuildableName = "Pods_RMovie.framework"
-            BlueprintName = "Pods-RMovie"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

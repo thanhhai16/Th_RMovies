@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,13 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // set top movies to local
         SearchManager.share.searchTopFilm { (movies) in
             for movie in movies{
                 self.topMovies.append(movie)
             }
         }
-        //progressLoopMovie()
-        print(topMovies.count)
+        
+                
         return true
     }
 
