@@ -619,7 +619,7 @@
 			baseConfigurationReference = F40C79AF773912F4A9EFC40C /* Pods-RMovie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				DEVELOPMENT_TEAM = 68C8FM8363;
+				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RMovie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -19,7 +19,7 @@ class RandomMovieViewController: UIViewController {
     
     @IBOutlet weak var posterImage: UIImageView!
     var movie = Movie()
-    var imageSelected = true
+ 
     
     let recognizer = UITapGestureRecognizer()
     
@@ -28,6 +28,7 @@ class RandomMovieViewController: UIViewController {
         //setting for label Name Movies
         lblNameMovies.isHidden = true
         lblNameMovies.sizeToFit()
+        self.posterImage.isUserInteractionEnabled = false
     }
     override func viewDidAppear(_ animated: Bool) {
         checkInternet = InternetStatus.share.checkInternet()
@@ -35,21 +36,15 @@ class RandomMovieViewController: UIViewController {
             InternetStatus.share.showAlert()
         }
         
-        
-        
         //setting for swipe down
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.randomTopMovies))
         swipeDown.direction = UISwipeGestureRecognizerDirection.down
         self.view.addGestureRecognizer(swipeDown)
         
         // tapping in poster Image -> go to info of this movies
-        if (!imageSelected){ // if it's not a default image (first image when u go to app see) u can detect it
-            self.posterImage.isUserInteractionEnabled = true
-            recognizer.addTarget(self, action: #selector(RandomMovieViewController.handleTap))
-            self.posterImage.addGestureRecognizer(recognizer)
-        } else {
-            imageSelected = false
-        }
+        recognizer.addTarget(self, action: #selector(RandomMovieViewController.handleTap))
+        self.posterImage.addGestureRecognizer(recognizer)
+       
         
         /* slove situation that some movies in topMovies Array are repeat .
          Why loop ? Because api that i use to down info movies just provie only 20 movies per page.
@@ -63,6 +58,7 @@ class RandomMovieViewController: UIViewController {
     }
 
     func handleTap() {
+        checkInternet = InternetStatus.share.checkInternet()
         if (!checkInternet) {
             InternetStatus.share.showAlert()
             return
@@ -76,8 +72,12 @@ class RandomMovieViewController: UIViewController {
     }
     
     func randomTopMovies(){
+        self.posterImage.isUserInteractionEnabled = true
+
+        checkInternet = InternetStatus.share.checkInternet()
         if (!checkInternet) {
             InternetStatus.share.showAlert()
+        
             return
         }
         

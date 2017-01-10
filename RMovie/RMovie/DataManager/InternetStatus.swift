@@ -27,7 +27,7 @@ class InternetStatus {
             showCircularIcon: true
         )
         let alertView = SCLAlertView(appearance: appearance)
-        let alertViewIcon = UIImage(named: "logoTabBar.png")
+        let alertViewIcon = UIImage(named: "logo Rmovie.png")
         
         alertView.showWarning("Error", subTitle: "Sorry, you're having trouble with the connection. Please try again in a moment.", closeButtonTitle: nil, duration: 1800, colorStyle: UInt(SCLAlertViewStyle.error.hashValue), colorTextButton: 0xFFFFFF, circleIconImage: alertViewIcon, animationStyle: SCLAnimationStyle.rightToLeft)
 
