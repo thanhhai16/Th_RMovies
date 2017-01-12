@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u3o-41-QfP">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u3o-41-QfP">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -68,6 +68,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xac-gC-Pa7">
+                                <rect key="frame" x="0.0" y="0.0" width="124" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
@@ -82,10 +87,11 @@
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="top" secondItem="mip-61-L3o" secondAttribute="bottom" constant="15" id="v1X-Og-R0u"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Movie Today" image="logoTabBar.png" id="mkR-Eg-g05" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
+                    <tabBarItem key="tabBarItem" title="Movie Today" image="logoTabBar.png" selectedImage="logo Rmovie tabbar.png" id="mkR-Eg-g05" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <navigationItem key="navigationItem" id="3nC-0q-7i5"/>
                     <connections>
                         <outlet property="lblNameMovies" destination="zKT-BB-FET" id="Uw8-JJ-AeS"/>
+                        <outlet property="lblSwipingDown" destination="mip-61-L3o" id="18Q-ya-mjr"/>
                         <outlet property="posterImage" destination="U4M-2H-CKr" id="lu4-us-KGu"/>
                     </connections>
                 </viewController>

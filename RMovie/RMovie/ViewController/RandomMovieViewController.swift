@@ -15,13 +15,21 @@ class RandomMovieViewController: UIViewController {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var checkInternet = InternetStatus.share.checkInternet()
     
-    @IBOutlet weak var lblNameMovies: UILabel!
     
+    @IBOutlet weak var lblSwipingDown: UILabel!
+    @IBOutlet weak var lblNameMovies: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
+    
     var movie = Movie()
- 
+    var preMovies = [Movie]()
+    var preIndexMovies : Int = 0
+    var isPreMoviesFirst = true
     
     let recognizer = UITapGestureRecognizer()
+    
+    func push(a : Movie) {
+        preMovies.append(a)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +37,6 @@ class RandomMovieViewController: UIViewController {
         lblNameMovies.isHidden = true
         lblNameMovies.sizeToFit()
         self.posterImage.isUserInteractionEnabled = false
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        checkInternet = InternetStatus.share.checkInternet()
-        if (!checkInternet) {
-            InternetStatus.share.showAlert()
-        }
-        
-        //setting for swipe down
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.randomTopMovies))
-        swipeDown.direction = UISwipeGestureRecognizerDirection.down
-        self.view.addGestureRecognizer(swipeDown)
-        
-        // tapping in poster Image -> go to info of this movies
-        recognizer.addTarget(self, action: #selector(RandomMovieViewController.handleTap))
-        self.posterImage.addGestureRecognizer(recognizer)
-       
         
         /* slove situation that some movies in topMovies Array are repeat .
          Why loop ? Because api that i use to down info movies just provie only 20 movies per page.
@@ -53,8 +45,26 @@ class RandomMovieViewController: UIViewController {
          
          */
         progressRepeaterMovies()
-
+    }
+    override func viewDidAppear(_ animated: Bool) {
         
+        //print(preMovies.count)
+        //setting for swipping down
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.randomTopMovies))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        //setting for swipping up
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.backToPreMovies))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        // tapping in poster Image -> go to info of this movies
+        recognizer.addTarget(self, action: #selector(RandomMovieViewController.handleTap))
+        self.posterImage.addGestureRecognizer(recognizer)
+       // print("Count Pre Movies: ")
+        
+     
     }
 
     func handleTap() {
@@ -71,28 +81,70 @@ class RandomMovieViewController: UIViewController {
 
     }
     
+    func setupForMoviesUI() {
+        let url = URL(string: movie.poster)
+        let image = UIImage(named: "logo Rmovie.png")
+        self.posterImage.sd_setImage(with: url, placeholderImage: image)
+        lblNameMovies.isHidden = false
+        lblNameMovies.text = movie.name
+    }
+    
+    func backToPreMovies()  {
+        if (preIndexMovies < 0) {
+            return
+        }
+        print(1)
+        UIView.transition(with: self.posterImage, duration: 0.2, options: .transitionFlipFromBottom, animations: {
+            //  self.posterImage.image = self.posterImage.image?.withRenderingMode(.alwaysOriginal)
+            self.posterImage.center.y =  2 * self.posterImage.frame.height
+        }) { (complete) in
+        }
+        if (isPreMoviesFirst){
+            isPreMoviesFirst = false
+            preIndexMovies -= 1
+        }
+        movie = preMovies[preIndexMovies]
+        preIndexMovies -= 1
+        setupForMoviesUI()
+    }
+    
     func randomTopMovies(){
+        UIView.transition(with: self.posterImage, duration: 0.2, options: .transitionFlipFromTop, animations: {
+          //  self.posterImage.image = self.posterImage.image?.withRenderingMode(.alwaysOriginal)
+            self.posterImage.center.y = 0 -  self.posterImage.frame.height
+        }) { (complete) in
+        }
+        print(2)
+        self.lblSwipingDown.isHidden = true
         self.posterImage.isUserInteractionEnabled = true
 
         checkInternet = InternetStatus.share.checkInternet()
         if (!checkInternet) {
             InternetStatus.share.showAlert()
-        
             return
         }
-        
-        let rad = Int(arc4random_uniform(UInt32(appDelegate.countTopFilmRest)))
-        appDelegate.countTopFilmRest -= 1
-        //print(appDelegate.countTopFilmRest)
-        movie = appDelegate.topMovies[rad]
- 
-        let url = URL(string: movie.poster)
-        //print(url)
-        self.posterImage.sd_setImage(with: url)
-        lblNameMovies.isHidden = false
-        lblNameMovies.text = movie.name
-        appDelegate.topMovies.remove(at: rad)
-        print(appDelegate.topMovies.count)
+        if (!isPreMoviesFirst) {
+            preIndexMovies += 1
+        }
+        if (preIndexMovies < 0) {
+            preIndexMovies = 0
+        }
+       // print(preMovies.count)
+        if (preIndexMovies + 1 < preMovies.count){
+            preIndexMovies += 1
+            movie = preMovies[preIndexMovies]
+            
+        } else {
+            let rad = Int(arc4random_uniform(UInt32(appDelegate.topMovies.count))) // random A Top movies
+            self.push(a: appDelegate.topMovies[rad]) // push a movie at index a to Pre Movies Array
+            self.preIndexMovies = preMovies.count - 1
+            isPreMoviesFirst = true
+            //print(preIndexMovies)
+            movie = appDelegate.topMovies[rad]
+            appDelegate.topMovies.remove(at: rad)
+        }
+        self.setupForMoviesUI()
+       // print(appDelegate.topMovies.count)
     }
 
     func progressRepeaterMovies()  {
