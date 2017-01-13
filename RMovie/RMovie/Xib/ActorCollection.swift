@@ -27,6 +27,7 @@ class ActorCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
         self.layout.coverDensity = 0.15
         self.layout.minCoverOpacity = 0.2
         self.layout.minCoverScale = 0.5
+        self.reloadData()
     }
     
     // DataSoucre Method
@@ -44,7 +45,6 @@ class ActorCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
         cell.poster.sd_setImage(with: url)
         cell.circle.isHidden = true
         cell.movieScore.isHidden  = true
-        cell.alpha = 0
         return cell
     }
 }

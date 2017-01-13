@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GoAutoSlideView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +72,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0072C878C676A855220674463E4E6158</key>
+		<key>14186B919B299CB27D819873751F6B90</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14186B919B299CB27D819873751F6B90</key>
+		<key>1F1DC0B47E165B0B97DA2472018905E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,22 +92,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4CF0A5EDC2E683363027835904B9D8BE</key>
+		<key>400B7AA7C44CBC4D4B3EE8142F0E8061</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66F2939B164BFB9CF6DD7937A89F8A71</key>
+		<key>44514C2B9B15D71094E35395FB54E0C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7566EA8C84378E1E7951AC98DED7C859</key>
+		<key>447ED7CB327049A689AC2B227FF81680</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EFEDD3B7C2E2353E6DBA787A4928840</key>
+		<key>5ED5870E9A26A27C5E1D24B679633DC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AAF951BF7BC1D0BA52482ECBA7786421</key>
+		<key>A2194A1D1406EE50F0D927BD890369C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D572CB098D7003EF59F2DECA978E439B</key>
+		<key>D3E61443354AB4296E141A0C74DBB696</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1DDC15EAB707E67FDB63057996BA9C8</key>
+		<key>D604B924FB9C880F0BCFAAD714AEB24A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDE5A906AF4B2069A8DA5F9B3C896CA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

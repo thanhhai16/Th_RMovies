@@ -13,13 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    static let shared = AppDelegate()
+    
     var countTopFilmRest = 100
     var topMovies = [Movie]()
-
+    var bannerMainMovie = [Movie]()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        SearchManager.share.searchTopFilm { (movies) in
+                SearchManager.share.searchTopFilm { (movies) in
             for movie in movies{
                 self.topMovies.append(movie)
             }

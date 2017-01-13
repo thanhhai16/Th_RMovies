@@ -106,7 +106,7 @@ extension SearchManager {
                         let poster = imageGetUrl + posterPath!
                         movie.poster = poster
                     } else {
-                        movie.poster = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
+                        movie.poster = "https://s27.postimg.org/i2ms0o2xv/poster.jpg"
                     }
                     let backdropPath = result["backdrop_path"].string
                     
@@ -115,7 +115,7 @@ extension SearchManager {
                         let backdrop = imageGetUrl + backdropPath!
                         movie.backdrop = backdrop
                     } else {
-                        movie.backdrop = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
+                        movie.backdrop = "https://s30.postimg.org/lyqeydan5/backdrop.jpg"
                     }
                     var casts = [Actor]()
                     movies.append(movie)

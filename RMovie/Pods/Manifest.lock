@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.2.0)
   - BetterSegmentedControl (0.7)
   - EZYGradientView (1.5.1)
+  - GoAutoSlideView (0.7)
   - NVActivityIndicatorView (3.1)
   - RAMAnimatedTabBarController (2.0.13)
   - SDWebImage (3.8.2):
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - BetterSegmentedControl (~> 0.7)
   - EZYGradientView (from `https://github.com/Niphery/EZYGradientView`)
+  - GoAutoSlideView (~> 0.7)
   - NVActivityIndicatorView
   - RAMAnimatedTabBarController (~> 2.0.13)
   - SDWebImage (~> 3.8)
@@ -45,6 +47,7 @@ SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
   EZYGradientView: f13e7a9e774b906c66d617fb04a13c8853ba25b4
+  GoAutoSlideView: 97b43a387d26ed5c62be79a73e7b5c02d6084795
   NVActivityIndicatorView: 9f47e8a4affb860ef729aeec99b1550219e6c233
   RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
@@ -54,6 +57,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: a329b52b2ebf0314d171944436e69842d1b585d9
+PODFILE CHECKSUM: 3f241fc90c7bf5ec94bddb9ac6f6ccaea84dd9c4
 
 COCOAPODS: 1.1.1

@@ -30,6 +30,8 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
         self.layout.coverDensity = 0.15
         self.layout.minCoverOpacity = 0.2
         self.layout.minCoverScale = 0.5
+        self.reloadData()
+        
     }
     
     // DataSoure Method
@@ -46,7 +48,6 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
         let url = URL(string: movies[indexPath.row].poster)
         cell.poster.sd_setImage(with: url)
         cell.movieScore.text = "\(movies[indexPath.row].score!)"
-        cell.alpha = 0
         return cell
     }
     

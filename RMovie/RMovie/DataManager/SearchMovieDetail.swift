@@ -81,7 +81,7 @@ extension SearchManager {
                         let poster = imageGetUrl + posterPath!
                         actor.poster = poster
                     } else {
-                        actor.poster = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
+                        actor.poster = "https://s28.postimg.org/k2a1kzlq5/people.jpg"
                     }
                     actors.append(actor)
                     i += 1

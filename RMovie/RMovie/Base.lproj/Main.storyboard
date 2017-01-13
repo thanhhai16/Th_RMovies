@@ -45,6 +45,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="JJH-Jx-luK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo Rmovie.png" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-2H-CKr">
                                 <rect key="frame" x="53.5" y="124" width="213" height="320.5"/>
                                 <constraints>
@@ -69,14 +72,17 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="centerY" secondItem="RD7-aK-4BN" secondAttribute="centerY" id="7jG-Xh-yq1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zKT-BB-FET" secondAttribute="trailing" constant="20" id="Flk-mh-meJ"/>
+                            <constraint firstItem="JJH-Jx-luK" firstAttribute="top" secondItem="RD7-aK-4BN" secondAttribute="top" id="P84-2m-AfY"/>
+                            <constraint firstAttribute="trailing" secondItem="JJH-Jx-luK" secondAttribute="trailing" id="T7N-xr-EPm"/>
                             <constraint firstItem="mip-61-L3o" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="Uuk-5o-baN"/>
                             <constraint firstItem="zKT-BB-FET" firstAttribute="leading" secondItem="RD7-aK-4BN" secondAttribute="leadingMargin" constant="20" id="bO4-e3-QgS"/>
                             <constraint firstItem="zKT-BB-FET" firstAttribute="top" secondItem="U4M-2H-CKr" secondAttribute="bottom" constant="7" id="mNz-lr-sK4"/>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="width" secondItem="RD7-aK-4BN" secondAttribute="width" multiplier="2:3" id="mRy-v6-NRr"/>
+                            <constraint firstItem="JJH-Jx-luK" firstAttribute="leading" secondItem="RD7-aK-4BN" secondAttribute="leading" id="pfW-bc-Mwh"/>
+                            <constraint firstAttribute="bottom" secondItem="JJH-Jx-luK" secondAttribute="bottom" id="r3w-SO-zCj"/>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="t0b-63-3Ho"/>
                             <constraint firstItem="zKT-BB-FET" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="uGW-z0-GWQ"/>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="top" secondItem="mip-61-L3o" secondAttribute="bottom" constant="15" id="v1X-Og-R0u"/>
@@ -127,9 +133,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t86-ab-kXl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="t86-ab-kXl">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQK-0e-bDr">
                                 <rect key="frame" x="279" y="72" width="25" height="25"/>
@@ -250,13 +255,14 @@
         <!--Animated Tab Bar Controller-->
         <scene sceneID="CCw-Af-7wn">
             <objects>
-                <tabBarController id="u3o-41-QfP" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewcontroller" id="u3o-41-QfP" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="m0Y-4Z-2mB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="dtR-Hn-hko" kind="relationship" relationship="viewControllers" id="hhQ-72-6b2"/>
                         <segue destination="vyS-cs-d61" kind="relationship" relationship="viewControllers" id="D2p-Qp-xSu"/>
                         <segue destination="fYY-Wq-jhB" kind="relationship" relationship="viewControllers" id="UfF-Dm-k7D"/>
                         <segue destination="u61-RI-Qoo" kind="relationship" relationship="viewControllers" id="MR0-AP-Nf1"/>
@@ -264,7 +270,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqD-RK-vkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1394" y="-38"/>
+            <point key="canvasLocation" x="-1429" y="-38"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="JyM-1Q-gik">
@@ -278,9 +284,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="trt-bW-hJi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="trt-bW-hJi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNV-Bd-tcX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
@@ -568,6 +573,68 @@
             </objects>
             <point key="canvasLocation" x="-3281" y="-38"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="vyI-xA-Gds">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="dtR-Hn-hko" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home-30.png" id="9FS-3V-9En" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="6Zf-Bo-7Ni" id="lSS-1d-Uje"/>
+                        </connections>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sRe-BY-kXK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sta-BW-jGG" kind="relationship" relationship="rootViewController" id="SN3-5f-3Vq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WzE-bK-lhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="6Zf-Bo-7Ni" customClass="RAMFumeAnimation" customModule="RAMAnimatedTabBarController"/>
+            </objects>
+            <point key="canvasLocation" x="-2293" y="-1194"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="x4J-qo-nDv">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="Sta-BW-jGG" customClass="MainViewController" customModule="RMovie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xZq-qx-DGC"/>
+                        <viewControllerLayoutGuide type="bottom" id="TNJ-2D-cst"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2yy-eo-X7j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-B1-U2x">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loader.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BJd-l6-yXe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BJd-l6-yXe" secondAttribute="trailing" id="1NI-wd-rIx"/>
+                            <constraint firstItem="h2u-B1-U2x" firstAttribute="leading" secondItem="2yy-eo-X7j" secondAttribute="leading" id="Bed-xK-dfT"/>
+                            <constraint firstAttribute="bottom" secondItem="BJd-l6-yXe" secondAttribute="bottom" id="K41-f1-dvM"/>
+                            <constraint firstItem="BJd-l6-yXe" firstAttribute="top" secondItem="2yy-eo-X7j" secondAttribute="top" id="KvH-0W-cSq"/>
+                            <constraint firstAttribute="bottom" secondItem="h2u-B1-U2x" secondAttribute="bottom" id="Rhx-Q8-gNa"/>
+                            <constraint firstAttribute="trailing" secondItem="h2u-B1-U2x" secondAttribute="trailing" id="Wj8-U6-WHB"/>
+                            <constraint firstItem="BJd-l6-yXe" firstAttribute="leading" secondItem="2yy-eo-X7j" secondAttribute="leading" id="fS8-wF-ene"/>
+                            <constraint firstItem="h2u-B1-U2x" firstAttribute="top" secondItem="2yy-eo-X7j" secondAttribute="top" id="mcQ-Ty-Gyg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wca-Py-Ruz"/>
+                    <connections>
+                        <outlet property="loaderImage" destination="BJd-l6-yXe" id="ATs-xy-JB7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bA4-Dh-dQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1546.875" y="-1194.7183098591549"/>
+        </scene>
         <!--Favorite-->
         <scene sceneID="hr1-Eo-xOv">
             <objects>
@@ -592,11 +659,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background.png" width="303" height="575"/>
         <image name="Circled Play-50.png" width="92" height="92"/>
+        <image name="Home-30.png" width="30" height="30"/>
         <image name="Search-30-white.png" width="30" height="30"/>
         <image name="Search-30.png" width="30" height="30"/>
         <image name="Star-30.png" width="30" height="30"/>
         <image name="gradient.png" width="606" height="340"/>
+        <image name="loader.jpg" width="303" height="575"/>
         <image name="logo Rmovie tabbar.png" width="29" height="29"/>
         <image name="logo Rmovie.png" width="1000" height="1000"/>
         <image name="logoTabBar.png" width="30" height="30"/>

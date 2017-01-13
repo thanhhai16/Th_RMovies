@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '44514C2B9B15D71094E35395FB54E0C1'
-               BlueprintName = 'SwiftyJSON'
+               BlueprintIdentifier = 'FDE5A906AF4B2069A8DA5F9B3C896CA3'
+               BlueprintName = 'GoAutoSlideView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyJSON.framework'>
+               BuildableName = 'GoAutoSlideView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

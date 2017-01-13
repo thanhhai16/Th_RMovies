@@ -46,7 +46,7 @@ class SearchManager {
                     let poster = imageGetUrl + posterPath!
                     actor.poster = poster
                 } else {
-                    actor.poster = "https://s-media-cache-ak0.pinimg.com/736x/eb/c8/89/ebc88941781c6547b3f33d520d603779.jpg"
+                    actor.poster = "https://s28.postimg.org/k2a1kzlq5/people.jpg"
                 }
                 actors.append(actor)
             }
@@ -122,7 +122,6 @@ class SearchManager {
                         return
                     }
                     movie.overview = overview
-                    print("overview", movie.overview)
                     guard let score = result["vote_average"].float else {
                         return
                     }
@@ -135,9 +134,7 @@ class SearchManager {
                         genres.append(gen)
                     }
                     movie.genre = genres
-                    print("genre", movie.genre)
                     movie.score = score
-                    print("score", score)
                     guard let popularity = result["popularity"].float else {
                         return
                     }
@@ -149,7 +146,7 @@ class SearchManager {
                         let poster = imageGetUrl + posterPath!
                         movie.poster = poster
                     } else {
-                        movie.poster = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
+                        movie.poster = "https://s27.postimg.org/i2ms0o2xv/poster.jpg"
                     }
                     let backdropPath = result["backdrop_path"].string
                     
@@ -158,9 +155,8 @@ class SearchManager {
                         let backdrop = imageGetUrl + backdropPath!
                         movie.backdrop = backdrop
                     } else {
-                        movie.backdrop = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
+                        movie.backdrop = "https://s30.postimg.org/lyqeydan5/backdrop.jpg"
                     }
-                    var casts = [Actor]()
                     movies.append(movie)
                 }
             }
@@ -204,7 +200,7 @@ class SearchManager {
                         let poster = imageGetUrl + posterPath!
                         movie.poster = poster
                     } else {
-                        movie.poster = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
+                        movie.poster = "https://s27.postimg.org/i2ms0o2xv/poster.jpg"
                     }
                     
                     
@@ -213,7 +209,7 @@ class SearchManager {
                         let backdrop = imageGetUrl + backdropPath!
                         movie.backdrop = backdrop
                     } else {
-                        movie.backdrop = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
+                        movie.backdrop = "https://s30.postimg.org/lyqeydan5/backdrop.jpg"
                     }
                     
                     guard let popularity = result["popularity"].float else {
@@ -261,9 +257,7 @@ class SearchManager {
                     movie.media_type = movieMedia
                     //print(movieMedia)
                     movies.append(movie)
-                    
                 }
-            
                 completion(movies)
             }
             
