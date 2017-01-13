@@ -117,7 +117,7 @@ extension SearchManager {
                     } else {
                         movie.backdrop = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
                     }
-                    var casts = [Actor]()
+                    //var casts = [Actor]()
                     movies.append(movie)
                 }
                 completion(movies)

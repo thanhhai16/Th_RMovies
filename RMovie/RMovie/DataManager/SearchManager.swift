@@ -13,6 +13,7 @@ import SwiftyJSON
 class SearchManager {
     
     static let share = SearchManager()
+    var topMovies = [Movie]()
     
     func searchPeople(searchText: String, completion : @escaping(_ null : Bool, _ people: [Actor]) -> Void) {
         var actors = [Actor]()
@@ -160,7 +161,7 @@ class SearchManager {
                     } else {
                         movie.backdrop = "https://s-media-cache-ak0.pinimg.com/564x/3d/32/27/3d32271e87fc2ee5f44f1a0fe189c804.jpg"
                     }
-                    var casts = [Actor]()
+                   // var casts = [Actor]()
                     movies.append(movie)
                 }
             }
@@ -172,6 +173,7 @@ class SearchManager {
         }
     }
     
+        
 }
 
 

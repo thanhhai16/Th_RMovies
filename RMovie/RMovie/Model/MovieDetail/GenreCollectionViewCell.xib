@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="146" height="35"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSM-1l-ILO">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSM-1l-ILO">
                         <rect key="frame" x="0.0" y="0.0" width="146" height="13"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -27,8 +27,8 @@
             </view>
             <constraints>
                 <constraint firstItem="GSM-1l-ILO" firstAttribute="top" secondItem="oQj-zh-7H1" secondAttribute="top" id="5cV-Za-dnT"/>
-                <constraint firstAttribute="trailing" secondItem="GSM-1l-ILO" secondAttribute="trailing" id="nqe-aY-Z4e"/>
-                <constraint firstItem="GSM-1l-ILO" firstAttribute="leading" secondItem="oQj-zh-7H1" secondAttribute="leading" id="ss9-ld-6pK"/>
+                <constraint firstAttribute="trailing" secondItem="GSM-1l-ILO" secondAttribute="trailing" id="tb1-FC-GcP"/>
+                <constraint firstItem="GSM-1l-ILO" firstAttribute="leading" secondItem="oQj-zh-7H1" secondAttribute="leading" id="xWJ-JG-fvu"/>
             </constraints>
             <size key="customSize" width="146" height="35"/>
             <connections>

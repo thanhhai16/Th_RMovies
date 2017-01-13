@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BetterSegmentedControl
 import SwiftHEXColors
 import NVActivityIndicatorView
 
@@ -15,7 +14,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var segmentBtn: [UIButton]!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var segmentControl: BetterSegmentedControl!
+    //@IBOutlet weak var segmentControl: BetterSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
@@ -82,6 +81,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
         self.fetchMovies(searchText: textField.text!)
         self.fetchActors(searchText: textField.text!)
         self.activityIndicator.startAnimating()
+        self.noResultText.isHidden = true
         return true
     }
     
@@ -102,6 +102,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
                 }
                 self.movieCollectionView = Bundle.main.loadNibNamed("MovieCollection", owner: nil, options: nil)?.first as? MovieCollection
                 self.movieCollectionView?.movies = movies
+                self.movieCollectionView?.setUP()
                 self.view.addSubview(self.movieCollectionView!)
                 self.movieCollectionView?.frame = CGRect(x: 0, y:self.view.frame.height/4.5, width: self.view.frame.width, height: self.view.frame.height * 0.65)
                 if self.segmentActor {
@@ -128,6 +129,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
                 }
                 self.actorCollectionView = Bundle.main.loadNibNamed("ActorCollection", owner: nil, options: nil)?.first as? ActorCollection
                 self.actorCollectionView?.actors = actors
+                self.actorCollectionView?.setUP()
                 self.view.addSubview(self.actorCollectionView!)
                 self.actorCollectionView?.frame = CGRect(x: 0, y:self.view.frame.height/4.5, width: self.view.frame.width, height: self.view.frame.height * 0.65)
                 if !self.segmentActor {

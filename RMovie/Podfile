@@ -11,12 +11,13 @@ target 'RMovie' do
 	pod 'RAMAnimatedTabBarController', "~> 2.0.13"
 	pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 	pod ‘Shimmer’
-	pod 'BetterSegmentedControl', '~> 0.7'
 	pod 'SDWebImage', '~>3.8'
 	pod 'SwiftHEXColors'
 	pod "XCDYouTubeKit", "~> 2.5"
 	pod 'SwiftyJSON'
+	pod 'ReachabilitySwift', '~> 3'
 	pod 'NVActivityIndicatorView'
+	pod 'SCLAlertView'
 	pod 'EZYGradientView', :git => 'https://github.com/Niphery/EZYGradientView'
 
 end

@@ -74,7 +74,7 @@ extension SearchManager {
                     actor.name = name
                     let posterPath = cast["profile_path"].string
                     
-                    print("cast poster", posterPath)
+                   // print("cast poster", posterPath)
                     
                     //Check if nil
                     if (posterPath != nil) {

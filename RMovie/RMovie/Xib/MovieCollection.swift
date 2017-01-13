@@ -11,6 +11,10 @@ import SDWebImage
 
 
 class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    
+    @IBOutlet weak var layout: LNICoverFlowLayout!
+    
     var movies : [Movie]!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +24,16 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
         let nib = UINib(nibName: "SearchCell", bundle: nil)
         self.register(nib, forCellWithReuseIdentifier: "SearchCell")
     }
+    
+    func setUP ()  {
+        self.layout.itemSize = CGSize(width: self.frame.width * 3/4 * 3/4, height: self.frame.width * 1.125 * 3/4)
+        self.layout.coverDensity = 0.15
+        self.layout.minCoverOpacity = 0.2
+        self.layout.minCoverScale = 0.5
+    }
+    
+    // DataSoure Method
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -39,29 +53,6 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = ["movie": movies[indexPath.row]]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: movieDetailNotification), object: nil, userInfo: movie)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let r : UInt32 = arc4random_uniform(2)
-        if r == 0 {
-            UIView.transition(with: cell, duration: 1, options: .transitionFlipFromLeft, animations: { 
-                cell.alpha = 1
-            }, completion: nil)
-        }
-        if r == 1 {
-            UIView.transition(with: cell, duration: 1, options: .transitionFlipFromRight, animations: {
-                cell.alpha = 1
-            }, completion: nil)
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.width * 3/4, height: self.frame.width * 1.125)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        let leftInset = self.frame.height * 0.125
-        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: leftInset)
     }
     
 
