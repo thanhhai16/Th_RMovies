@@ -68,11 +68,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xac-gC-Pa7">
-                                <rect key="frame" x="0.0" y="0.0" width="124" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
@@ -90,14 +85,42 @@
                     <tabBarItem key="tabBarItem" title="Movie Today" image="logoTabBar.png" selectedImage="logo Rmovie tabbar.png" id="mkR-Eg-g05" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <navigationItem key="navigationItem" id="3nC-0q-7i5"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="ziK-6J-Nwr" id="2ry-hj-zj4"/>
                         <outlet property="lblNameMovies" destination="zKT-BB-FET" id="Uw8-JJ-AeS"/>
                         <outlet property="lblSwipingDown" destination="mip-61-L3o" id="18Q-ya-mjr"/>
                         <outlet property="posterImage" destination="U4M-2H-CKr" id="lu4-us-KGu"/>
+                        <segue destination="Rpt-dW-1wQ" kind="modal" id="tCa-7n-gvi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff3-Nf-CHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="168.75" y="329.57746478873241"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lts-Od-bLa">
+            <objects>
+                <viewController id="Rpt-dW-1wQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vCa-gw-6dy"/>
+                        <viewControllerLayoutGuide type="bottom" id="RHE-24-9VD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K3w-8I-kfP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCW-QF-CK2">
+                                <rect key="frame" x="16" y="117" width="162" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Background_Gen1"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ete-KS-5bY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gvc-PA-dxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="330"/>
         </scene>
         <!--Search-->
         <scene sceneID="qvq-pa-ccR">
@@ -598,6 +621,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background_Gen1" width="16" height="16"/>
         <image name="Circled Play-50.png" width="92" height="92"/>
         <image name="Search-30-white.png" width="30" height="30"/>
         <image name="Search-30.png" width="30" height="30"/>
