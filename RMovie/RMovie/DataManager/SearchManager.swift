@@ -168,7 +168,7 @@ class SearchManager {
         }
     }
     
-    func searchTopFilm(completion: @escaping(_ movies: [Movie]) -> Void) {
+    func searchTopRandomFilm(completion: @escaping(_ movies: [Movie]) -> Void) {
         var movies = [Movie]()
         for page in 1..<6 {
             let url = (topMovieSearchUrlBegin + String(page) + topMovieSearchUrlEnd).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)

@@ -16,6 +16,8 @@ target 'RMovie' do
 	pod 'SwiftHEXColors'
 	pod "XCDYouTubeKit", "~> 2.5"
 	pod 'SwiftyJSON'
+	pod 'ReachabilitySwift', '~> 3'
+	pod 'SCLAlertView'
 	pod 'NVActivityIndicatorView'
 	pod 'EZYGradientView', :git => 'https://github.com/Niphery/EZYGradientView'
 	pod 'GoAutoSlideView', '~> 0.7'

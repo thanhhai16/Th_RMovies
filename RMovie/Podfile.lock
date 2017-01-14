@@ -3,15 +3,17 @@ PODS:
   - BetterSegmentedControl (0.7)
   - EZYGradientView (1.5.1)
   - GoAutoSlideView (0.7)
-  - NVActivityIndicatorView (3.1)
+  - NVActivityIndicatorView (3.2)
   - RAMAnimatedTabBarController (2.0.13)
+  - ReachabilitySwift (3)
+  - SCLAlertView (0.7.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - Shimmer (1.0.2)
   - Spring (1.0.3)
   - SwiftHEXColors (1.1.0)
-  - SwiftyJSON (3.1.3)
+  - SwiftyJSON (3.1.4)
   - XCDYouTubeKit (2.5.3)
 
 DEPENDENCIES:
@@ -21,6 +23,8 @@ DEPENDENCIES:
   - GoAutoSlideView (~> 0.7)
   - NVActivityIndicatorView
   - RAMAnimatedTabBarController (~> 2.0.13)
+  - ReachabilitySwift (~> 3)
+  - SCLAlertView
   - SDWebImage (~> 3.8)
   - Shimmer
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
@@ -48,15 +52,17 @@ SPEC CHECKSUMS:
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
   EZYGradientView: f13e7a9e774b906c66d617fb04a13c8853ba25b4
   GoAutoSlideView: 97b43a387d26ed5c62be79a73e7b5c02d6084795
-  NVActivityIndicatorView: 9f47e8a4affb860ef729aeec99b1550219e6c233
+  NVActivityIndicatorView: 28942c18ced111a6a3ce5e6f5b27d9d40116d639
   RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftHEXColors: 8f7e364df7929e32cff9f9eeb044bb215167d6be
-  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 3f241fc90c7bf5ec94bddb9ac6f6ccaea84dd9c4
+PODFILE CHECKSUM: 444f8ac86556c54e6cb3ec8a4e2e708641d2c5fb
 
 COCOAPODS: 1.1.1
