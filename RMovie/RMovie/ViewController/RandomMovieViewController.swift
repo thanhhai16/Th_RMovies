@@ -8,25 +8,28 @@
 
 import UIKit
 import SCLAlertView
-
+import NVActivityIndicatorView
 
 class RandomMovieViewController: UIViewController {
 
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var checkInternet = InternetStatus.share.checkInternet()
+    var topMovies = [Movie]()
     
-    
+    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var lblSwipingDown: UILabel!
     @IBOutlet weak var lblNameMovies: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
     
     var movie = Movie()
+    //preMovies will manage a pre Movie that you random before
     var preMovies = [Movie]()
     var preIndexMovies : Int = 0
     var isPreMoviesFirst = true
     
     let recognizer = UITapGestureRecognizer()
     
+    //push new movie to stack
     func push(a : Movie) {
         preMovies.append(a)
     }
@@ -37,18 +40,26 @@ class RandomMovieViewController: UIViewController {
         lblNameMovies.isHidden = true
         lblNameMovies.sizeToFit()
         self.posterImage.isUserInteractionEnabled = false
-        
+        self.activityIndicator.startAnimating()
         /* slove situation that some movies in topMovies Array are repeat .
          Why loop ? Because api that i use to down info movies just provie only 20 movies per page.
          So i must use 5 for loop to get 100 top movies. Moreover, 1 loop include completion(movies)
          (movies is array
          
          */
+        loadMovies()
         progressRepeaterMovies()
+    }
+    func loadMovies(){
+        SearchManager.share.searchTopFilm { (movies) in
+            for movie in movies{
+                self.topMovies.append(movie)
+            }
+        }
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         
-        //print(preMovies.count)
         //setting for swipping down
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.randomTopMovies))
         swipeDown.direction = UISwipeGestureRecognizerDirection.down
@@ -62,8 +73,6 @@ class RandomMovieViewController: UIViewController {
         // tapping in poster Image -> go to info of this movies
         recognizer.addTarget(self, action: #selector(RandomMovieViewController.handleTap))
         self.posterImage.addGestureRecognizer(recognizer)
-       // print("Count Pre Movies: ")
-        
      
     }
 
@@ -93,9 +102,7 @@ class RandomMovieViewController: UIViewController {
         if (preIndexMovies < 0) {
             return
         }
-        print(1)
         UIView.transition(with: self.posterImage, duration: 0.2, options: .transitionFlipFromBottom, animations: {
-            //  self.posterImage.image = self.posterImage.image?.withRenderingMode(.alwaysOriginal)
             self.posterImage.center.y =  2 * self.posterImage.frame.height
         }) { (complete) in
         }
@@ -110,7 +117,6 @@ class RandomMovieViewController: UIViewController {
     
     func randomTopMovies(){
         UIView.transition(with: self.posterImage, duration: 0.2, options: .transitionFlipFromTop, animations: {
-          //  self.posterImage.image = self.posterImage.image?.withRenderingMode(.alwaysOriginal)
             self.posterImage.center.y = 0 -  self.posterImage.frame.height
         }) { (complete) in
         }
@@ -129,34 +135,33 @@ class RandomMovieViewController: UIViewController {
         if (preIndexMovies < 0) {
             preIndexMovies = 0
         }
-       // print(preMovies.count)
         if (preIndexMovies + 1 < preMovies.count){
             preIndexMovies += 1
             movie = preMovies[preIndexMovies]
             
         } else {
-            let rad = Int(arc4random_uniform(UInt32(appDelegate.topMovies.count))) // random A Top movies
-            self.push(a: appDelegate.topMovies[rad]) // push a movie at index a to Pre Movies Array
+            let rad = Int(arc4random_uniform(UInt32(topMovies.count))) // random A Top movies
+            self.push(a: topMovies[rad]) // push a movie at index a to Pre Movies Array
             self.preIndexMovies = preMovies.count - 1
             isPreMoviesFirst = true
-            //print(preIndexMovies)
-            movie = appDelegate.topMovies[rad]
-            appDelegate.topMovies.remove(at: rad)
+
+            movie = topMovies[rad]
+            topMovies.remove(at: rad)
         }
         self.setupForMoviesUI()
-       // print(appDelegate.topMovies.count)
     }
 
     func progressRepeaterMovies()  {
         var checkFilmSelected = Array(repeating: false, count: 100000000)
         var count = 0
-        for movie in appDelegate.topMovies {
+        for movie in topMovies {
             if (checkFilmSelected[movie.id]) {
-                appDelegate.topMovies.remove(at: count)
+                topMovies.remove(at: count)
             } else {
                 count += 1
                 checkFilmSelected[movie.id] = true
             }
         }
+        self.activityIndicator.stopAnimating()
     }
 }
