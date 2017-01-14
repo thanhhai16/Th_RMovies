@@ -71,6 +71,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eA-Jf-eh0">
+                                <rect key="frame" x="255" y="28" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Qbu-la-0HS"/>
+                                    <constraint firstAttribute="height" constant="50" id="TRL-uR-pEI"/>
+                                </constraints>
+                                <state key="normal" image="Setting.png"/>
+                                <connections>
+                                    <segue destination="00L-DC-uCI" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="NVr-Hx-57l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="centerY" secondItem="RD7-aK-4BN" secondAttribute="centerY" id="7jG-Xh-yq1"/>
@@ -78,6 +89,7 @@
                             <constraint firstItem="JJH-Jx-luK" firstAttribute="top" secondItem="RD7-aK-4BN" secondAttribute="top" id="P84-2m-AfY"/>
                             <constraint firstAttribute="trailing" secondItem="JJH-Jx-luK" secondAttribute="trailing" id="T7N-xr-EPm"/>
                             <constraint firstItem="mip-61-L3o" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="Uuk-5o-baN"/>
+                            <constraint firstItem="4eA-Jf-eh0" firstAttribute="top" secondItem="gFz-t3-kpo" secondAttribute="bottom" constant="8" id="Z7k-EQ-DzP"/>
                             <constraint firstItem="zKT-BB-FET" firstAttribute="leading" secondItem="RD7-aK-4BN" secondAttribute="leadingMargin" constant="20" id="bO4-e3-QgS"/>
                             <constraint firstItem="zKT-BB-FET" firstAttribute="top" secondItem="U4M-2H-CKr" secondAttribute="bottom" constant="7" id="mNz-lr-sK4"/>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="width" secondItem="RD7-aK-4BN" secondAttribute="width" multiplier="2:3" id="mRy-v6-NRr"/>
@@ -85,6 +97,7 @@
                             <constraint firstAttribute="bottom" secondItem="JJH-Jx-luK" secondAttribute="bottom" id="r3w-SO-zCj"/>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="t0b-63-3Ho"/>
                             <constraint firstItem="zKT-BB-FET" firstAttribute="centerX" secondItem="RD7-aK-4BN" secondAttribute="centerX" id="uGW-z0-GWQ"/>
+                            <constraint firstAttribute="trailing" secondItem="4eA-Jf-eh0" secondAttribute="trailing" constant="15" id="uwX-dl-xpj"/>
                             <constraint firstItem="U4M-2H-CKr" firstAttribute="top" secondItem="mip-61-L3o" secondAttribute="bottom" constant="15" id="v1X-Og-R0u"/>
                         </constraints>
                     </view>
@@ -100,6 +113,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff3-Nf-CHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="168.75" y="329.57746478873241"/>
+        </scene>
+        <!--Setting For Random Movies View Controller-->
+        <scene sceneID="yaC-Cz-8MV">
+            <objects>
+                <viewController id="00L-DC-uCI" customClass="SettingForRandomMoviesViewController" customModule="RMovie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yUD-Sz-YeM"/>
+                        <viewControllerLayoutGuide type="bottom" id="DHR-CX-XI8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ka7-nO-uz6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siC-gT-jmd">
+                                <rect key="frame" x="139" y="474" width="78" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsP-ba-L9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.25" y="327.46478873239437"/>
         </scene>
         <!--Search-->
         <scene sceneID="qvq-pa-ccR">
@@ -667,6 +707,7 @@
         <image name="Home-30.png" width="30" height="30"/>
         <image name="Search-30-white.png" width="30" height="30"/>
         <image name="Search-30.png" width="30" height="30"/>
+        <image name="Setting.png" width="50" height="50"/>
         <image name="Star-30.png" width="30" height="30"/>
         <image name="gradient.png" width="606" height="340"/>
         <image name="loader.jpg" width="303" height="575"/>
