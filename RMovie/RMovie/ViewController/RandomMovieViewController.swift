@@ -41,15 +41,21 @@ class RandomMovieViewController: UIViewController {
         lblNameMovies.sizeToFit()
         self.posterImage.isUserInteractionEnabled = false
         self.activityIndicator.startAnimating()
+        
+        let transitionManager = TransitionRandomMovieScreenManager()
+        
+        loadMovies()
         /* slove situation that some movies in topMovies Array are repeat .
          Why loop ? Because api that i use to down info movies just provie only 20 movies per page.
          So i must use 5 for loop to get 100 top movies. Moreover, 1 loop include completion(movies)
          (movies is array
          
          */
-        loadMovies()
+        
         progressRepeaterMovies()
     }
+    
+    
     func loadMovies(){
         SearchManager.share.searchTopFilm { (movies) in
             for movie in movies{
@@ -114,6 +120,8 @@ class RandomMovieViewController: UIViewController {
         preIndexMovies -= 1
         setupForMoviesUI()
     }
+    
+
     
     func randomTopMovies(){
         UIView.transition(with: self.posterImage, duration: 0.2, options: .transitionFlipFromTop, animations: {
