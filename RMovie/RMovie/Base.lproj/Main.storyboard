@@ -91,7 +91,9 @@
                     <tabBarItem key="tabBarItem" title="Movie Today" image="logoTabBar.png" id="mkR-Eg-g05" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <navigationItem key="navigationItem" id="3nC-0q-7i5"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="ziK-6J-Nwr" id="Aez-gu-5Np"/>
                         <outlet property="lblNameMovies" destination="zKT-BB-FET" id="Uw8-JJ-AeS"/>
+                        <outlet property="lblSwipingDown" destination="mip-61-L3o" id="jJ5-ex-mR8"/>
                         <outlet property="posterImage" destination="U4M-2H-CKr" id="lu4-us-KGu"/>
                     </connections>
                 </viewController>
