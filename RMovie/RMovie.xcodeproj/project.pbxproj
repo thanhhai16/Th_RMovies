@@ -400,7 +400,7 @@
 				TargetAttributes = {
 					277382FA1E191EC000499356 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 68C8FM8363;
+						DevelopmentTeam = FAZH6E59JU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -675,12 +675,12 @@
 			baseConfigurationReference = F40C79AF773912F4A9EFC40C /* Pods-RMovie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				DEVELOPMENT_TEAM = 68C8FM8363;
+				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RMovie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.Techkids.iOS5.RMovie;
+				PRODUCT_BUNDLE_IDENTIFIER = ga.hohoanghiep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
@@ -692,12 +692,12 @@
 			baseConfigurationReference = 320B39FC09BA55EF2A0FE36F /* Pods-RMovie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				DEVELOPMENT_TEAM = 68C8FM8363;
+				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RMovie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.Techkids.iOS5.RMovie;
+				PRODUCT_BUNDLE_IDENTIFIER = ga.hohoanghiep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
