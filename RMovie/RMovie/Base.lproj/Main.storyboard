@@ -662,9 +662,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0X-2J-r8g">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies &amp; TV shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-Il-2ve">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVh-py-c2S">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="rVh-py-c2S" firstAttribute="leading" secondItem="s0X-2J-r8g" secondAttribute="leading" id="HZz-XU-b8l"/>
+                                    <constraint firstAttribute="trailing" secondItem="rVh-py-c2S" secondAttribute="trailing" id="OSX-6h-sJH"/>
+                                    <constraint firstItem="rVh-py-c2S" firstAttribute="top" secondItem="9bM-Il-2ve" secondAttribute="bottom" constant="8" id="gm7-mg-tdO"/>
+                                    <constraint firstItem="9bM-Il-2ve" firstAttribute="top" secondItem="s0X-2J-r8g" secondAttribute="top" constant="5" id="hnE-Hq-bqK"/>
+                                    <constraint firstAttribute="trailing" secondItem="9bM-Il-2ve" secondAttribute="trailing" constant="5" id="mtD-Ik-rWJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="rVh-py-c2S" secondAttribute="bottom" id="o8w-9p-WVz"/>
+                                    <constraint firstItem="9bM-Il-2ve" firstAttribute="leading" secondItem="s0X-2J-r8g" secondAttribute="leading" constant="5" id="yFs-YU-kzZ"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BA-4e-fej">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hg1-5N-Gxi"/>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRU-Ri-jq8">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhH-qT-6OT">
@@ -743,6 +765,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hg1-5N-Gxi">
+                                        <gestureRecognizers/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -774,29 +799,6 @@
                                     <constraint firstItem="Hg1-5N-Gxi" firstAttribute="top" secondItem="0BA-4e-fej" secondAttribute="top" constant="5" id="vA6-cF-p9d"/>
                                     <constraint firstItem="Kc5-tB-ng1" firstAttribute="top" secondItem="8k3-Dd-Po5" secondAttribute="bottom" constant="3" id="vOI-b1-kV1"/>
                                     <constraint firstItem="Zcg-fm-6rr" firstAttribute="leading" secondItem="0BA-4e-fej" secondAttribute="leading" constant="5" id="xcq-sd-bux"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0X-2J-r8g">
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies &amp; TV shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-Il-2ve">
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVh-py-c2S">
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="rVh-py-c2S" firstAttribute="leading" secondItem="s0X-2J-r8g" secondAttribute="leading" id="HZz-XU-b8l"/>
-                                    <constraint firstAttribute="trailing" secondItem="rVh-py-c2S" secondAttribute="trailing" id="OSX-6h-sJH"/>
-                                    <constraint firstItem="rVh-py-c2S" firstAttribute="top" secondItem="9bM-Il-2ve" secondAttribute="bottom" constant="8" id="gm7-mg-tdO"/>
-                                    <constraint firstItem="9bM-Il-2ve" firstAttribute="top" secondItem="s0X-2J-r8g" secondAttribute="top" constant="5" id="hnE-Hq-bqK"/>
-                                    <constraint firstAttribute="trailing" secondItem="9bM-Il-2ve" secondAttribute="trailing" constant="5" id="mtD-Ik-rWJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="rVh-py-c2S" secondAttribute="bottom" id="o8w-9p-WVz"/>
-                                    <constraint firstItem="9bM-Il-2ve" firstAttribute="leading" secondItem="s0X-2J-r8g" secondAttribute="leading" constant="5" id="yFs-YU-kzZ"/>
                                 </constraints>
                             </view>
                         </subviews>
