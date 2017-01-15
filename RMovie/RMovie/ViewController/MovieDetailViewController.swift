@@ -143,6 +143,7 @@ class MovieDetailViewController: UIViewController {
             self.movie.casts = casts
             self.infoView.movie = self.movie
             self.infoView.setDecription()
+            self.infoView.vc = self
             self.view.addSubview(self.infoView)
             self.activityIndicator.stopAnimating()
         }

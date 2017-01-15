@@ -16,6 +16,8 @@ class InfoMovieView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     var movie : Movie!
     
+    weak var vc : UIViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setup()
@@ -78,5 +80,32 @@ class InfoMovieView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             cell.castName.text = movie.casts[indexPath.row].name
             return cell
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == castCollection {
+            print("did sellect item ")
+            let actorVC = self.vc?.storyboard?.instantiateViewController(withIdentifier: "ActorDetailViewController") as! ActorDetailViewController
+            actorVC.actor =  movie.casts[indexPath.row]
+            self.vc?.navigationController?.pushViewController(actorVC, animated: true)
+        }
+        
+        
+
+//        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+//            if let presentedViewController = topController.presentedViewController {
+//                topController = presentedViewController
+//            }
+//            let vc = topController.storyboard?.instantiateViewController(withIdentifier: "ActorDetailViewController") as! ActorDetailViewController
+//            vc.actor = movie.casts[indexPath.row]
+//            //topController.navigationController?.pushViewController(vc, animated: true)
+//            // topController should now be your topmost view controller
+//        }
+//        
+//
+//        let vc = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "ActorDetailViewController") as! ActorDetailViewController
+//        vc.actor =  movie.casts[indexPath.row]
+//        self.window?.rootViewController?.navigationController?.pushViewController(vc, animated: true)
+        print("pushed")
     }
 }
