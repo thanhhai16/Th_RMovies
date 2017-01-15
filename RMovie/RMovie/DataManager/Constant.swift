@@ -29,3 +29,5 @@ let urlTopMovie2016 = "https://api.themoviedb.org/3/discover/movie?api_key=f37e7
 
 let urlTopMovie = "https://api.themoviedb.org/3/discover/movie?api_key=f37e7e147e496587dbbd3e506735b98d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_count.gte=500&vote_average.gte=8"
 
+
+let actorDetailNotification = "actorDetail"
