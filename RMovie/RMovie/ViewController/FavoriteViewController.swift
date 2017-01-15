@@ -26,12 +26,12 @@ class FavoriteViewController: UIViewController , DZNEmptyDataSetSource,DZNEmptyD
         
         super.loadView()
         
-        
         tableview = UITableView(frame: view.bounds, style: .plain)
         tableview.dataSource = self
         tableview.delegate = self
         let castNib = UINib(nibName: "FavoriteTableViewCell", bundle: nil)
         self.tableview.register(castNib, forCellReuseIdentifier: "FavoriteTableViewCell")
+        self.tableview.backgroundColor = UIColor.gray
         tableview.rowHeight = UITableViewAutomaticDimension
         view.addSubview(tableview)
         

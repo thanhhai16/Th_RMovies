@@ -28,8 +28,10 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     var actorNull = false
     var movieNull = false
     
+    var tap : UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tap = UITapGestureRecognizer(target: self, action: "dismisskeyboard")
         self.setUp()
         self.Notification()
     }
@@ -167,5 +169,18 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
         self.searchTextField.becomeFirstResponder()
     }
     
+}
+
+
+extension SearchViewController{
+    func dismisskeyboard() {
+        view.endEditing(true)
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        view.addGestureRecognizer(tap)
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.removeGestureRecognizer(tap)
+    }
 }
 

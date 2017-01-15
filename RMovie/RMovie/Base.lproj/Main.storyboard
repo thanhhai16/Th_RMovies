@@ -386,16 +386,6 @@
                                             <action selector="invokePlayBtn:" destination="zTf-iI-aKM" eventType="touchUpInside" id="gs3-Xz-BrQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIu-rA-l7x">
-                                        <rect key="frame" x="10" y="16" width="36" height="41"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" image="Back-50.png">
-                                            <color key="titleColor" red="0.99509865045547485" green="0.9930608868598938" blue="0.99595731496810913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backBtn:" destination="zTf-iI-aKM" eventType="touchUpInside" id="oml-z0-fCU"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmh-hV-bFk">
                                         <rect key="frame" x="321" y="157" width="46" height="46"/>
                                         <constraints>
@@ -417,10 +407,8 @@
                                     <constraint firstItem="70s-GC-nDz" firstAttribute="leading" secondItem="lNV-Bd-tcX" secondAttribute="leading" id="HGf-pR-ORg"/>
                                     <constraint firstItem="uMI-ay-4yJ" firstAttribute="leading" secondItem="lNV-Bd-tcX" secondAttribute="leading" id="OkE-za-Kd5"/>
                                     <constraint firstAttribute="width" secondItem="lNV-Bd-tcX" secondAttribute="height" multiplier="16:9" id="Vtv-fW-ARv"/>
-                                    <constraint firstItem="yIu-rA-l7x" firstAttribute="leading" secondItem="lNV-Bd-tcX" secondAttribute="leading" constant="10" id="WNb-Kf-ecB"/>
                                     <constraint firstItem="hAc-AU-wHG" firstAttribute="centerY" secondItem="uMI-ay-4yJ" secondAttribute="centerY" id="aig-FH-mF0"/>
                                     <constraint firstItem="uMI-ay-4yJ" firstAttribute="top" secondItem="lNV-Bd-tcX" secondAttribute="top" id="cWl-fH-oar"/>
-                                    <constraint firstItem="yIu-rA-l7x" firstAttribute="top" secondItem="lNV-Bd-tcX" secondAttribute="top" constant="16" id="elQ-9l-uGL"/>
                                     <constraint firstAttribute="bottom" secondItem="70s-GC-nDz" secondAttribute="bottom" constant="-90" id="g5t-hI-2VL"/>
                                     <constraint firstAttribute="trailing" secondItem="jmh-hV-bFk" secondAttribute="trailing" constant="8" id="kRA-BI-O1o"/>
                                     <constraint firstAttribute="trailing" secondItem="uMI-ay-4yJ" secondAttribute="trailing" id="m5M-jA-FDx"/>
@@ -581,6 +569,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vGm-Vg-Tdl" firstAttribute="leading" secondItem="Kis-80-AdV" secondAttribute="trailing" constant="16" id="3bo-4r-yhE"/>
                             <constraint firstItem="bIi-33-ABM" firstAttribute="top" secondItem="vGm-Vg-Tdl" secondAttribute="bottom" constant="2" id="3wc-B4-g1H"/>
@@ -619,6 +608,9 @@
                             <constraint firstItem="nKs-tm-E3J" firstAttribute="centerX" secondItem="YEn-89-mwV" secondAttribute="centerX" id="xGq-qB-wO0"/>
                             <constraint firstItem="YEn-89-mwV" firstAttribute="top" secondItem="y1r-A9-OaM" secondAttribute="bottom" id="zJz-ET-liV"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4RV-vL-3x1" appends="YES" id="XXR-m0-oeR"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="pK7-vi-nQ3" id="ABE-sn-r9w"/>
@@ -641,6 +633,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgS-fy-fOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="4RV-vL-3x1">
+                    <connections>
+                        <action selector="swipeBack:" destination="zTf-iI-aKM" id="dst-qm-7Vy"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2205.5999999999999" y="746.17691154422789"/>
         </scene>
@@ -916,7 +913,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="s0X-2J-r8g" firstAttribute="top" secondItem="0BA-4e-fej" secondAttribute="bottom" id="3T2-Vp-FUp"/>
                             <constraint firstItem="0BA-4e-fej" firstAttribute="leading" secondItem="T8M-Ne-Xi7" secondAttribute="leading" id="DZs-Ov-2wq"/>
@@ -927,7 +925,11 @@
                             <constraint firstAttribute="trailing" secondItem="s0X-2J-r8g" secondAttribute="trailing" id="mfa-ya-QIb"/>
                             <constraint firstItem="s0X-2J-r8g" firstAttribute="height" secondItem="T8M-Ne-Xi7" secondAttribute="height" multiplier="0.4" id="zwm-ut-pVt"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JtF-HK-Sq8" appends="YES" id="Mdu-oU-O6C"/>
+                        </connections>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="aBiography" destination="Zcg-fm-6rr" id="4Z7-VG-9S3"/>
                         <outlet property="aBirthday" destination="nhE-oI-BmD" id="ubK-EV-P2v"/>
@@ -939,12 +941,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hii-XQ-usr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="JtF-HK-Sq8">
+                    <connections>
+                        <action selector="swipeBack:" destination="v7y-Hm-cBj" id="mSZ-ZC-hMS"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1431.2" y="745.27736131934034"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Back-50.png" width="50" height="50"/>
         <image name="Background.png" width="303" height="575"/>
         <image name="Circled Play-50.png" width="92" height="92"/>
         <image name="Home-30.png" width="30" height="30"/>

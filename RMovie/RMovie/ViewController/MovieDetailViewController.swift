@@ -117,10 +117,6 @@ class MovieDetailViewController: UIViewController {
         }
 
     }
-    @IBAction func backBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     
     // MARK :- Show Poster
     func gestureImage() {
@@ -222,6 +218,11 @@ class MovieDetailViewController: UIViewController {
         self.animateTabbar.animationTabBarHidden(false)
         self.trailerPlayer.view.removeFromSuperview()
         trailerPlayer.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func swipeBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     }
