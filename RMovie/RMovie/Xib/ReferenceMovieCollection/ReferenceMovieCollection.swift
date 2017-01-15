@@ -15,6 +15,8 @@ class ReferenceMovieCollection: UIView, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    weak var vc : UIViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.delegate = self
@@ -41,7 +43,12 @@ class ReferenceMovieCollection: UIView, UICollectionViewDelegate, UICollectionVi
 //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: movieDetailNotification), object: nil, userInfo: movie)
         
         // su dung searchMovieDetail de lay chi tiet thong tin phim va hien thi MovieDetailScreen
-        
+        SearchManager.share.searchMovieDetail(media_type: movies[indexPath.row].media_type, id: movies[indexPath.row].id) { (movieSearched) in
+            let movieVC = self.vc?.storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+            movieVC.movie =  movieSearched
+            self.vc?.navigationController?.pushViewController(movieVC, animated: true)
+
+        }
         
     }
     
@@ -50,7 +57,7 @@ class ReferenceMovieCollection: UIView, UICollectionViewDelegate, UICollectionVi
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.width * 3/4, height: self.frame.width * 1.125)
+        return CGSize(width: self.frame.width * 2/5, height: self.frame.height * 0.8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

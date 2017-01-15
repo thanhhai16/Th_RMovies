@@ -67,6 +67,14 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     }
     func Notification() {
         NotificationCenter.default.addObserver(self, selector: #selector(movieDetail), name: NSNotification.Name(rawValue: movieDetailNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(actorDetail), name: NSNotification.Name(rawValue : actorDetailNotification), object: nil)
+    }
+    
+    func actorDetail(_ notification : Notification) {
+        let actor = notification.userInfo?["actor"] as! Actor
+        let actorDetailViewController = storyboard?.instantiateViewController(withIdentifier: "ActorDetailViewController") as! ActorDetailViewController
+        actorDetailViewController.actor = actor
+        self.navigationController?.pushViewController(actorDetailViewController, animated: true)
     }
     
     func movieDetail(_ notification : Notification) {

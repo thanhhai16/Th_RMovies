@@ -37,12 +37,13 @@ class ActorDetailViewController: UIViewController {
             self.aName.text = name
             self.aPlaceOfBirth.text = placeOfBirth
             self.aBirthday.text = birthday
-            self.aBiography.text = biography
+            self.aBiography.text = "\n" + biography
             self.aPopularity.text = String(popularity)
         }
         
         SearchManager.share.searchActorDetailMovie(id: actor.id) { (movies) in
             let movieCollectionView = Bundle.main.loadNibNamed("ReferenceMovieCollection", owner: self, options: nil)?.first as? ReferenceMovieCollection
+            movieCollectionView?.vc = self
             movieCollectionView?.frame = self.movieContainerView.bounds
             movieCollectionView?.movies = movies
             self.movieContainerView.addSubview(movieCollectionView!)
@@ -55,10 +56,15 @@ class ActorDetailViewController: UIViewController {
     }
 
     func setUI() {
-            self.aBiography.isEditable = false
+        self.title = "Actor Screen"
+        self.aBiography.isEditable = false
         self.aImage.layer.masksToBounds = true
         self.aImage.layer.cornerRadius = 10
         self.aName.font = UIFont.systemFont(ofSize: 23)
+    }
+
+    @IBAction func swipeBack(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

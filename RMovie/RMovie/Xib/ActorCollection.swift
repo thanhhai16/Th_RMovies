@@ -47,4 +47,8 @@ class ActorCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
         cell.movieScore.isHidden  = true
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let actor = ["actor": actors[indexPath.row]]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: actorDetailNotification), object: nil, userInfo: actor)
+    }
 }

@@ -800,17 +800,22 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="s0X-2J-r8g" firstAttribute="top" secondItem="0BA-4e-fej" secondAttribute="bottom" id="3T2-Vp-FUp"/>
                             <constraint firstItem="0BA-4e-fej" firstAttribute="leading" secondItem="T8M-Ne-Xi7" secondAttribute="leading" id="DZs-Ov-2wq"/>
                             <constraint firstAttribute="trailing" secondItem="0BA-4e-fej" secondAttribute="trailing" id="J3F-zl-WHL"/>
                             <constraint firstItem="s0X-2J-r8g" firstAttribute="leading" secondItem="T8M-Ne-Xi7" secondAttribute="leading" id="JTl-f7-08k"/>
-                            <constraint firstItem="0BA-4e-fej" firstAttribute="top" secondItem="3iD-2U-GSd" secondAttribute="bottom" id="ZoZ-m8-Lm9"/>
+                            <constraint firstItem="0BA-4e-fej" firstAttribute="top" secondItem="3iD-2U-GSd" secondAttribute="bottom" id="RrJ-xK-epH"/>
+                            <constraint firstItem="0BA-4e-fej" firstAttribute="top" secondItem="3iD-2U-GSd" secondAttribute="bottom" id="co6-KF-bwr"/>
                             <constraint firstItem="v68-pK-UNP" firstAttribute="top" secondItem="s0X-2J-r8g" secondAttribute="bottom" id="eUj-TV-hTn"/>
                             <constraint firstAttribute="trailing" secondItem="s0X-2J-r8g" secondAttribute="trailing" id="mfa-ya-QIb"/>
                             <constraint firstItem="s0X-2J-r8g" firstAttribute="height" secondItem="T8M-Ne-Xi7" secondAttribute="height" multiplier="0.4" id="zwm-ut-pVt"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jM4-zQ-pS5" appends="YES" id="2TQ-LN-Mgm"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="aBiography" destination="Zcg-fm-6rr" id="4Z7-VG-9S3"/>
@@ -823,6 +828,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hii-XQ-usr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="jM4-zQ-pS5">
+                    <connections>
+                        <action selector="swipeBack:" destination="v7y-Hm-cBj" id="xcc-QW-Cwg"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1431.2" y="745.27736131934034"/>
         </scene>

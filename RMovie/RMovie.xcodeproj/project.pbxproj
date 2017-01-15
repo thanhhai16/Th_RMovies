@@ -295,9 +295,9 @@
 				041383551E2A9D8000E0C5C0 /* SettingForRandomMoviesViewController.swift */,
 				041383511E2A9D4C00E0C5C0 /* ActorDetailViewController.swift */,
 				27D885111E1A20C000774823 /* MovieDetailViewContollerExtention.swift */,
-				27D885131E1A20E200774823 /* FavoriteViewController.swift */,
 				27D884FB1E1A179000774823 /* SearchViewController.swift */,
 				277592751E1E1B2C00AFC06E /* MovieDetailViewController.swift */,
+				27D885131E1A20E200774823 /* FavoriteViewController.swift */,
 				277E851B1E28E925005F86DD /* MainViewController.swift */,
 			);
 			path = ViewController;
@@ -336,7 +336,6 @@
 		27D885171E1A5B8C00774823 /* SeachColectionView */ = {
 			isa = PBXGroup;
 			children = (
-				84C0E3DC1E2ACE9A007E1A1B /* ReferenceMovieCollection */,
 				27D8852A1E1A8F2500774823 /* ActorCollection.swift */,
 				27D8852B1E1A8F2500774823 /* ActorCollection.xib */,
 				27D8851A1E1A5BBF00774823 /* SearchCell.xib */,
@@ -351,6 +350,7 @@
 		27D885221E1A8D0200774823 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84C0E3DC1E2ACE9A007E1A1B /* ReferenceMovieCollection */,
 				277E851D1E28EA8D005F86DD /* MainScreen */,
 				277592771E1E219500AFC06E /* MovieDetail */,
 				27D885171E1A5B8C00774823 /* SeachColectionView */,
@@ -403,7 +403,8 @@
 				84C0E3DF1E2ACE9A007E1A1B /* ReferenceMovieCollection.swift */,
 				84C0E3E01E2ACE9A007E1A1B /* ReferenceMovieCollection.xib */,
 			);
-			path = ReferenceMovieCollection;
+			name = ReferenceMovieCollection;
+			path = ../Xib/ReferenceMovieCollection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
