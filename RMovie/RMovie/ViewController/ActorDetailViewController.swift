@@ -56,6 +56,7 @@ class ActorDetailViewController: UIViewController {
 
     func setUI() {
             self.aBiography.isEditable = false
+        self.aImage.layer.masksToBounds = true
         self.aImage.layer.cornerRadius = 10
     }
     override func didReceiveMemoryWarning() {
