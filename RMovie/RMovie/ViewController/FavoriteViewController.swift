@@ -8,51 +8,73 @@
 
 import UIKit
 import DZNEmptyDataSet
-import expanding_collection
+import DGElasticPullToRefresh
 
-class FavoriteViewController: ExpandingViewController ,UICollectionViewDelegateFlowLayout,  DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
+class FavoriteViewController: UIViewController , DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
 
    // @IBOutlet weak var tableview: UITableView!
     var cellsIsOpen = [Bool]()
-    @IBOutlet var collectionview: UICollectionView!
-    
-    
-    
+    var movies = [Movie]()
+ 
+    fileprivate var tableview: UITableView!
+
     //let favoriteMovies = UserDefaults.standard.value(forKey: "favoriteMovies") as! [Movie]
     var favoriteMovies = [Int]()
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        self.collectionview.delegate = self
-        self.collectionview.dataSource = self
-        self.collectionview.emptyDataSetSource = self
-        self.collectionview.emptyDataSetDelegate = self
-        
-        
-        let nib = UINib(nibName: "FavoriteViewCell", bundle: nil)
-        collectionview.register(nib, forCellWithReuseIdentifier: "FavoriteViewCell")
-       
-        
-        //self.collectionview.tableFooterView = UIView()
-        // Do any additional setup after loading the view.
-    }
-    
 
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func loadView() {
+        
+        super.loadView()
+        
+        
+        tableview = UITableView(frame: view.bounds, style: .plain)
+        tableview.dataSource = self
+        tableview.delegate = self
+        let castNib = UINib(nibName: "FavoriteTableViewCell", bundle: nil)
+        self.tableview.register(castNib, forCellReuseIdentifier: "FavoriteTableViewCell")
+        tableview.rowHeight = UITableViewAutomaticDimension
+        view.addSubview(tableview)
+        
+        self.tableview.emptyDataSetSource = self
+        self.tableview.emptyDataSetDelegate = self
+        
+        
+        
         if (UserDefaults.standard.object(forKey: "favoriteMovies") != nil) {
-            favoriteMovies = UserDefaults.standard.object(forKey: "favoriteMovies") as! [Int]
-            for id in favoriteMovies {
-                print(id)
-            }
+            self.favoriteMovies = UserDefaults.standard.object(forKey: "favoriteMovies") as! [Int]
+            
         }
         
-        print(favoriteMovies.count)
-        collectionview.reloadData()
-        collectionview.reloadEmptyDataSet()
+        // print(self?.favoriteMovies.count)
+        self.tableview.reloadData()
+        self.tableview.reloadEmptyDataSet()
+
+        
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
+        tableview.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            // Add your logic here
+            // Do not forget to call dg_stopLoading() at the end
+            if (UserDefaults.standard.object(forKey: "favoriteMovies") != nil) {
+                self?.favoriteMovies = UserDefaults.standard.object(forKey: "favoriteMovies") as! [Int]
+                
+            }
+            
+            // print(self?.favoriteMovies.count)
+            self?.tableview.reloadData()
+            self?.tableview.reloadEmptyDataSet()
+
+            self?.tableview.dg_stopLoading()
+            }, loadingView: loadingView)
+        tableview.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
+        tableview.dg_setPullToRefreshBackgroundColor(tableview.backgroundColor!)
         
     }
+
+    deinit {
+        tableview.dg_removePullToRefresh()
+    }
+    
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         let image = UIImage(named: "logo Rmovie tabbar.png")
         return image
@@ -88,65 +110,74 @@ class FavoriteViewController: ExpandingViewController ,UICollectionViewDelegateF
         
         return NSAttributedString(string: text, attributes: attribs)
     }
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+}
+extension FavoriteViewController : UITableViewDataSource , UITableViewDelegate{
+    @available(iOS 2.0, *)
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (favoriteMovies == nil) {
             return 0
         } else {
-           // print(favoriteMovies.count)
+            // print(favoriteMovies.count)
             return (favoriteMovies.count)
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var movies = Movie()
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableview.cellForRow(at: indexPath)
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: [],
+                       animations: {
+                        cell!.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                        
+        },
+                       completion: { finished in
+                        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: .curveEaseInOut,
+                                       animations: {
+                                        cell!.transform = CGAffineTransform(scaleX: 1, y: 1)
+                        },
+                                       completion: { finished in
+                                        SearchManager.share.searchMovieDetailFromMovieMediaId(id: self.favoriteMovies[indexPath.row]) { (movie) in
+                                            let movieDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+                                            movieDetailViewController.movie = movie
+                                            
+                                            self.navigationController?.pushViewController(movieDetailViewController, animated: true)
+                                        }
+                                        
+                        })
+                        
+        }
+        )
+
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var moviexx = Movie()
         var nameMovies : String!
         let defaultImage = UIImage(named: "logo Rmovie.png")
-        let cell = self.collectionview.dequeueReusableCell(withReuseIdentifier: "FavoriteViewCell", for: indexPath) as! FavoriteViewCell
-        cell.lblNameMovie.text = "Movies"
-               // print(<#T##items: Any...##Any#>)
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell") as! FavoriteTableViewCell
+        cell.movieName.text = "Movies"
+        // print(<#T##items: Any...##Any#>)
         SearchManager.share.searchMovieDetailFromMovieMediaId(id: favoriteMovies[indexPath.row]) { (movie) in
-            movies = movie
-            nameMovies = movies.name
-            let url = URL(string: movies.poster)
+            moviexx = movie
+            nameMovies = moviexx.name
+            let url = URL(string: moviexx.poster)
+            self.movies.append(movie)
             cell.movieImage.sd_setImage(with: url, placeholderImage: defaultImage)
-
+            cell.movieName.text = nameMovies
             //  print(self.favoriteMovies[indexPath.count])
         }
-        cell.lblNameMovie.text = nameMovies
-       // cell.movieImage = image
+        
+       // print(nameMovies)
+        // cell.movieImage = image
         return cell
         
         //cell.lblNameMovie.text = String(favoriteMovies[indexPath.row])
-        
-        
-    }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        
-//        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: [],
-//                                   animations: {
-//                                    cell!.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-//                                    
-//        },
-//                                   completion: { finished in
-//                                    UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: .curveEaseInOut,
-//                                                               animations: {
-//                                                                cell!.transform = CGAffineTransform(scaleX: 1, y: 1)
-//                                    },
-//                                                               completion: { finished in
-//                                                                self.test
-//                                    )
-//                                    
-//        }
-//        )    }
-    func test(){
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 80)
+
     }
 
 }

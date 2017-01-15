@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2ED3F0D704158354CA72D76C4D9590B1'
-               BlueprintName = 'XCDYouTubeKit'
+               BlueprintIdentifier = '47D07B436D82BB983C8429FF84F919A3'
+               BlueprintName = 'DGElasticPullToRefresh'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'XCDYouTubeKit.framework'>
+               BuildableName = 'DGElasticPullToRefresh.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

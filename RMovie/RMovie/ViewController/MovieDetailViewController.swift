@@ -12,6 +12,8 @@ import SwiftHEXColors
 import XCDYouTubeKit
 import RAMAnimatedTabBarController
 import NVActivityIndicatorView
+import SCLAlertView
+import XLActionController
 
 class MovieDetailViewController: UIViewController {
     
@@ -48,6 +50,13 @@ class MovieDetailViewController: UIViewController {
     var isFavor : Bool!
     var indexOfMoviesfavor : Int = 0
    
+    func showFavor(){
+        let alertview = SCLAlertView()
+        alertview.showSuccess("Success", subTitle: "Movie added to Favorite")
+    }
+    func showUnFavor(){
+        
+    }
     @IBAction func invokeFavorite(_ sender: Any) {
         isFavor = false
         indexOfMoviesfavor = 0
@@ -66,6 +75,7 @@ class MovieDetailViewController: UIViewController {
         }
         if (!isFavor){
             MoviesId.append(movie.id)
+            showFavor()
             favorBtn.setImage(UIImage(named: "like.png"), for: .normal)
            // print(MoviesId[MoviesId.count-1])
             UserDefaults.standard.setValue(MoviesId, forKey: "favoriteMovies")

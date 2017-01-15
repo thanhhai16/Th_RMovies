@@ -1,8 +1,8 @@
 PODS:
   - Alamofire (4.2.0)
   - BetterSegmentedControl (0.7)
+  - DGElasticPullToRefresh (1.1)
   - DZNEmptyDataSet (1.8.1)
-  - expanding-collection (1.0.4)
   - EZYGradientView (1.5.1)
   - GoAutoSlideView (0.7)
   - NVActivityIndicatorView (3.2)
@@ -17,12 +17,15 @@ PODS:
   - SwiftHEXColors (1.1.0)
   - SwiftyJSON (3.1.4)
   - XCDYouTubeKit (2.5.3)
+  - XLActionController (3.0.1):
+    - XLActionController/Core (= 3.0.1)
+  - XLActionController/Core (3.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - BetterSegmentedControl (~> 0.7)
+  - DGElasticPullToRefresh
   - DZNEmptyDataSet
-  - expanding-collection (~> 1.0.3)
   - EZYGradientView (from `https://github.com/Niphery/EZYGradientView`)
   - GoAutoSlideView (~> 0.7)
   - NVActivityIndicatorView
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - SwiftHEXColors
   - SwiftyJSON
   - XCDYouTubeKit (~> 2.5)
+  - XLActionController
 
 EXTERNAL SOURCES:
   EZYGradientView:
@@ -54,8 +58,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
   EZYGradientView: f13e7a9e774b906c66d617fb04a13c8853ba25b4
   GoAutoSlideView: 97b43a387d26ed5c62be79a73e7b5c02d6084795
   NVActivityIndicatorView: 28942c18ced111a6a3ce5e6f5b27d9d40116d639
@@ -68,7 +72,8 @@ SPEC CHECKSUMS:
   SwiftHEXColors: 8f7e364df7929e32cff9f9eeb044bb215167d6be
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
+  XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
 
-PODFILE CHECKSUM: 25dcf7c87c0d3d93dad2e71f5806e0609dc8e810
+PODFILE CHECKSUM: feecf9bdd7ffda2b810cb045e7100e1f9f7115eb
 
 COCOAPODS: 1.1.1

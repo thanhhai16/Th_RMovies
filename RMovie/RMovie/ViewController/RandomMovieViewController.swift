@@ -24,7 +24,7 @@ class RandomMovieViewController: UIViewController {
     var movie = Movie()
     //preMovies will manage a pre Movie that you random before
     var preMovies = [Movie]()
-    var preIndexMovies : Int = 0
+    var preIndexMovies : Int = -1
     var isPreMoviesFirst = true
     
     let recognizer = UITapGestureRecognizer()
@@ -43,17 +43,12 @@ class RandomMovieViewController: UIViewController {
         
         
         self.posterImage.isUserInteractionEnabled = false
+        self.posterImage.isHidden = true
         self.activityIndicator.startAnimating()
         
         loadMovies()
-        /* slove situation that some movies in topMovies Array are repeat .
-         Why loop ? Because api that i use to down info movies just provie only 20 movies per page.
-         So i must use 5 for loop to get 100 top movies. Moreover, 1 loop include completion(movies)
-         (movies is array
-         
-         */
         
-        progressRepeaterMovies()
+        
     }
     
     
@@ -61,9 +56,17 @@ class RandomMovieViewController: UIViewController {
         SearchManager.share.searchTopRandomFilm { (movies) in
             for movie in movies{
                 self.topMovies.append(movie)
-                //print(self.topMovies.count)
+                print(self.topMovies.count)
             }
+            /* slove situation that some movies in topMovies Array are repeat .
+             Why loop ? Because api that i use to down info movies just provie only 20 movies per page.
+             So i must use 5 for loop to get 100 top movies. Moreover, 1 loop include completion(movies)
+             (movies is array
+             
+             */
+            
         }
+        self.progressRepeaterMovies()
     }
     override func viewDidAppear(_ animated: Bool) {
         
@@ -123,6 +126,9 @@ class RandomMovieViewController: UIViewController {
             isPreMoviesFirst = false
             preIndexMovies -= 1
         }
+        if (preIndexMovies < 0) {
+            return
+        }
         movie = preMovies[preIndexMovies]
         preIndexMovies -= 1
         setupForMoviesUI()
@@ -179,7 +185,8 @@ class RandomMovieViewController: UIViewController {
                 checkFilmSelected[movie.id] = true
             }
         }
-       
+       print(self.topMovies.count)
         self.activityIndicator.stopAnimating()
+        self.posterImage.isHidden = false
     }
 }

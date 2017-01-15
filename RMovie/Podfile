@@ -20,7 +20,8 @@ target 'RMovie' do
 	pod 'SCLAlertView'
 	pod 'DZNEmptyDataSet'
 	pod 'NVActivityIndicatorView'
-	pod 'expanding-collection', '~> 1.0.3'
+	pod 'XLActionController'
+	pod 'DGElasticPullToRefresh'
 	pod 'EZYGradientView', :git => 'https://github.com/Niphery/EZYGradientView'
 	pod 'GoAutoSlideView', '~> 0.7'
 
