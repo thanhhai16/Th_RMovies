@@ -27,8 +27,12 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var backdropImage: UIImageView!
     
+    @IBOutlet weak var favorBtn: UIButton!
     @IBOutlet weak var noResult: UILabel!
+    var MoviesId : [Int] = []
+    
     var movie : Movie!
+
     var trailerPlayer = XCDYouTubeVideoPlayerViewController()
     var animateTabbar : RAMAnimatedTabBarController!
     var oldPosition : CGRect!
@@ -41,8 +45,37 @@ class MovieDetailViewController: UIViewController {
     var reviewView : MovieReviewView!
     var similarView : SimilarMovieView!
     
+    var isFavor : Bool!
+    var indexOfMoviesfavor : Int = 0
+   
+    @IBAction func invokeFavorite(_ sender: Any) {
+        isFavor = false
+        indexOfMoviesfavor = 0
+        if (UserDefaults.standard.array(forKey: "favoriteMovies") != nil) {
+            MoviesId = UserDefaults.standard.array(forKey: "favoriteMovies") as! [Int]
+            for id in MoviesId {
+                if (id == movie.id){
+                    isFavor = true
+                    MoviesId.remove(at: indexOfMoviesfavor)
+                    UserDefaults.standard.setValue(MoviesId, forKey: "favoriteMovies")
+                    favorBtn.setImage(UIImage(named: "unlike.png"), for: .normal)
+                    return
+                }
+                indexOfMoviesfavor += 1
+            }
+        }
+        if (!isFavor){
+            MoviesId.append(movie.id)
+            favorBtn.setImage(UIImage(named: "like.png"), for: .normal)
+           // print(MoviesId[MoviesId.count-1])
+            UserDefaults.standard.setValue(MoviesId, forKey: "favoriteMovies")
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpFavorButton()
         self.setUP()
         self.Notification()
         self.infoSetup()
@@ -56,7 +89,24 @@ class MovieDetailViewController: UIViewController {
         super.viewWillAppear(true)
         self.Notification()
     }
-    
+    func setUpFavorButton()  {
+        isFavor = false
+        if (UserDefaults.standard.array(forKey: "favoriteMovies") != nil) {
+            MoviesId = UserDefaults.standard.array(forKey: "favoriteMovies") as! [Int]
+            for id in MoviesId {
+                if (id == movie.id){
+                    isFavor = true
+                    favorBtn.setImage(UIImage(named: "like.png"), for: .normal)
+                    return
+                }
+                indexOfMoviesfavor += 1
+            }
+        }
+        if (!isFavor){
+            favorBtn.setImage(UIImage(named: "unlike.png"), for: .normal)
+        }
+
+    }
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

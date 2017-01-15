@@ -18,7 +18,9 @@ target 'RMovie' do
 	pod 'SwiftyJSON'
 	pod 'ReachabilitySwift', '~> 3'
 	pod 'SCLAlertView'
+	pod 'DZNEmptyDataSet'
 	pod 'NVActivityIndicatorView'
+	pod 'expanding-collection', '~> 1.0.3'
 	pod 'EZYGradientView', :git => 'https://github.com/Niphery/EZYGradientView'
 	pod 'GoAutoSlideView', '~> 0.7'
 

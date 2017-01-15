@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.2.0)
   - BetterSegmentedControl (0.7)
+  - DZNEmptyDataSet (1.8.1)
+  - expanding-collection (1.0.4)
   - EZYGradientView (1.5.1)
   - GoAutoSlideView (0.7)
   - NVActivityIndicatorView (3.2)
@@ -19,6 +21,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - BetterSegmentedControl (~> 0.7)
+  - DZNEmptyDataSet
+  - expanding-collection (~> 1.0.3)
   - EZYGradientView (from `https://github.com/Niphery/EZYGradientView`)
   - GoAutoSlideView (~> 0.7)
   - NVActivityIndicatorView
@@ -50,6 +54,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   BetterSegmentedControl: 0b4dde1caac22de345820858a5e2789132378c1c
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
   EZYGradientView: f13e7a9e774b906c66d617fb04a13c8853ba25b4
   GoAutoSlideView: 97b43a387d26ed5c62be79a73e7b5c02d6084795
   NVActivityIndicatorView: 28942c18ced111a6a3ce5e6f5b27d9d40116d639
@@ -63,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 444f8ac86556c54e6cb3ec8a4e2e708641d2c5fb
+PODFILE CHECKSUM: 25dcf7c87c0d3d93dad2e71f5806e0609dc8e810
 
 COCOAPODS: 1.1.1

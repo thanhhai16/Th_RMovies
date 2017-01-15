@@ -23,7 +23,8 @@ class MainViewController: UIViewController {
         self.SearchLoading()
         self.SearchTop()
         self.Notification()
-    
+//        var test = [Int]()
+//        UserDefaults.standard.setValue(test, forKey: "favoriteMovies")
     }
     
     func SearchLoading () {

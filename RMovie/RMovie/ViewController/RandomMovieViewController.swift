@@ -28,6 +28,7 @@ class RandomMovieViewController: UIViewController {
     var isPreMoviesFirst = true
     
     let recognizer = UITapGestureRecognizer()
+    var moviesID = [Int]()
     
     //push new movie to stack
     func push(a : Movie) {
@@ -39,6 +40,8 @@ class RandomMovieViewController: UIViewController {
         //setting for label Name Movies
         lblNameMovies.isHidden = true
         lblNameMovies.sizeToFit()
+        
+        
         self.posterImage.isUserInteractionEnabled = false
         self.activityIndicator.startAnimating()
         
@@ -58,9 +61,9 @@ class RandomMovieViewController: UIViewController {
         SearchManager.share.searchTopRandomFilm { (movies) in
             for movie in movies{
                 self.topMovies.append(movie)
+                //print(self.topMovies.count)
             }
         }
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         
@@ -78,6 +81,10 @@ class RandomMovieViewController: UIViewController {
         recognizer.addTarget(self, action: #selector(RandomMovieViewController.handleTap))
         self.posterImage.addGestureRecognizer(recognizer)
      
+       // UserDefaults.standard.set(topMovies, forKey: "topMovies")
+        //UserDefaults.standard.setValue(199, forKey: "favoriteMovies")
+        //print(self.moviesID.count)
+
     }
 
     func handleTap() {
@@ -98,6 +105,8 @@ class RandomMovieViewController: UIViewController {
         let url = URL(string: movie.poster)
         let image = UIImage(named: "logo Rmovie.png")
         self.posterImage.sd_setImage(with: url, placeholderImage: image)
+        self.posterImage.layer.borderColor = UIColor.white.cgColor
+        self.posterImage.layer.borderWidth = 2
         lblNameMovies.isHidden = false
         lblNameMovies.text = movie.name
     }
@@ -126,10 +135,10 @@ class RandomMovieViewController: UIViewController {
             self.posterImage.center.y = 0 -  self.posterImage.frame.height
         }) { (complete) in
         }
-        print(2)
+       // print(2)
         self.lblSwipingDown.isHidden = true
         self.posterImage.isUserInteractionEnabled = true
-
+        
         checkInternet = InternetStatus.share.checkInternet()
         if (!checkInternet) {
             InternetStatus.share.showAlert()
@@ -160,14 +169,17 @@ class RandomMovieViewController: UIViewController {
     func progressRepeaterMovies()  {
         var checkFilmSelected = Array(repeating: false, count: 100000000)
         var count = 0
+        print(self.topMovies.count)
         for movie in topMovies {
             if (checkFilmSelected[movie.id]) {
                 topMovies.remove(at: count)
             } else {
                 count += 1
+                moviesID.append(movie.id)
                 checkFilmSelected[movie.id] = true
             }
         }
+       
         self.activityIndicator.stopAnimating()
     }
 }

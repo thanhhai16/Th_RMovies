@@ -22,10 +22,7 @@ class SettingForRandomMoviesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue){
-        // bug? exit segue doesn't dismiss so we do it manually...
-        self.dismiss(animated: true, completion: nil)
-    }
+   
 
     /*
     // MARK: - Navigation

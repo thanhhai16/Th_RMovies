@@ -57,7 +57,6 @@ class ActorDetailViewController: UIViewController {
     func setUI() {
             self.aBiography.isEditable = false
         self.aImage.layer.cornerRadius = 10
-        self.aName.font = UIFont.systemFont(ofSize: 23)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
